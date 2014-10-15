@@ -7,21 +7,27 @@
 //
 
 #import "GameViewController.h"
-
+// Character Properties
+int const playerWidth = 32;
+int const playerHeight = 54;
 @interface GameViewController ()
 
 @end
 
 @implementation GameViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        UIImageView *playerView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 10, playerWidth , playerHeight)]autorelease];
+        playerView.image = [UIImage imageNamed:@"duck.png"];
+        
+        [self.view addSubview:playerView];
     }
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {

@@ -21,6 +21,7 @@
 		3A7FBBBC19EE50B700CEFC43 /* SkyFallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */; };
 		3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */; };
 		3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */; };
+		3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBCC19EE5A0000CEFC43 /* duck.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3A7FBBC519EE51CB00CEFC43 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		3A7FBBCC19EE5A0000CEFC43 /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */,
 				3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */,
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
+				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
 			);
 			path = SkyFall;
@@ -150,6 +153,22 @@
 				3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A7FBBCA19EE59DA00CEFC43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBBCB19EE59E700CEFC43 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3A7FBBCB19EE59E700CEFC43 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBBCC19EE5A0000CEFC43 /* duck.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +248,7 @@
 			files = (
 				3A7FBBA119EE50B700CEFC43 /* InfoPlist.strings in Resources */,
 				3A7FBBA919EE50B700CEFC43 /* Images.xcassets in Resources */,
+				3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */,
 				3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

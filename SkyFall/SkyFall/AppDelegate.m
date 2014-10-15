@@ -15,9 +15,11 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]autorelease];
     // Override point for customization after application launch.
     GameViewController *gameViewController = [[[GameViewController alloc] init]autorelease];
+
     self.window.rootViewController = gameViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     return YES;
 }
 
