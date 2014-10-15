@@ -1,5 +1,5 @@
 //
-//  GameViewController.h
+//  PlayerController.h
 //  SkyFall
 //
 //  Created by Josh Dee on 10/15/14.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
-
-
+@interface PlayerController : UIImageView
+{
+    CGPoint currentPoint;
+}
 
 @end

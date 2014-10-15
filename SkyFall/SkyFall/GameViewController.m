@@ -7,6 +7,8 @@
 //
 
 #import "GameViewController.h"
+#import "PlayerController.h"
+
 // Character Properties
 int const playerWidth = 32;
 int const playerHeight = 54;
@@ -19,14 +21,15 @@ int const playerHeight = 54;
 {
     self = [super init];
     if (self) {
-        UIImageView *playerView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 10, playerWidth , playerHeight)]autorelease];
+        PlayerController *playerView = [[PlayerController alloc] initWithFrame:CGRectMake(10, 10, playerWidth , playerHeight)];
         playerView.image = [UIImage imageNamed:@"duck.png"];
+       playerView.userInteractionEnabled = YES;
         
         [self.view addSubview:playerView];
+        [playerView release];
     }
     return self;
 }
-
 
 
 - (void)viewDidLoad

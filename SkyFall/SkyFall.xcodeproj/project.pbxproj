@@ -22,6 +22,7 @@
 		3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */; };
 		3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */; };
 		3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBCC19EE5A0000CEFC43 /* duck.png */; };
+		3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		3A7FBBCC19EE5A0000CEFC43 /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck.png; sourceTree = "<group>"; };
+		3A7FBBD119EE6FB800CEFC43 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				3A7FBBC519EE51CB00CEFC43 /* GameViewController.h */,
 				3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */,
 				3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */,
+				3A7FBBD119EE6FB800CEFC43 /* PlayerController.h */,
+				3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */,
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
 				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
@@ -270,6 +275,7 @@
 			files = (
 				3A7FBBA719EE50B700CEFC43 /* AppDelegate.m in Sources */,
 				3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */,
+				3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */,
 				3A7FBBA319EE50B700CEFC43 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
