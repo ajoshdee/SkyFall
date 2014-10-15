@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
+		3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */; };
+		3A7FBB9B19EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
+		3A7FBBA119EE50B700CEFC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBB9F19EE50B700CEFC43 /* InfoPlist.strings */; };
+		3A7FBBA319EE50B700CEFC43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBA219EE50B700CEFC43 /* main.m */; };
+		3A7FBBA719EE50B700CEFC43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBA619EE50B700CEFC43 /* AppDelegate.m */; };
+		3A7FBBA919EE50B700CEFC43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBA819EE50B700CEFC43 /* Images.xcassets */; };
+		3A7FBBB019EE50B700CEFC43 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBBAF19EE50B700CEFC43 /* XCTest.framework */; };
+		3A7FBBB119EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
+		3A7FBBB219EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
+		3A7FBBBA19EE50B700CEFC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */; };
+		3A7FBBBC19EE50B700CEFC43 /* SkyFallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A7FBBB319EE50B700CEFC43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7FBB8B19EE50B700CEFC43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7FBB9219EE50B700CEFC43;
+			remoteInfo = SkyFall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A7FBB9319EE50B700CEFC43 /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7FBB9619EE50B700CEFC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A7FBB9E19EE50B700CEFC43 /* SkyFall-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyFall-Info.plist"; sourceTree = "<group>"; };
+		3A7FBBA019EE50B700CEFC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A7FBBA219EE50B700CEFC43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A7FBBA419EE50B700CEFC43 /* SkyFall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyFall-Prefix.pch"; sourceTree = "<group>"; };
+		3A7FBBA519EE50B700CEFC43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3A7FBBA619EE50B700CEFC43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3A7FBBA819EE50B700CEFC43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3A7FBBAE19EE50B700CEFC43 /* SkyFallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyFallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7FBBAF19EE50B700CEFC43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3A7FBBB719EE50B700CEFC43 /* SkyFallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyFallTests-Info.plist"; sourceTree = "<group>"; };
+		3A7FBBB919EE50B700CEFC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyFallTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A7FBB9019EE50B700CEFC43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */,
+				3A7FBB9B19EE50B700CEFC43 /* UIKit.framework in Frameworks */,
+				3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7FBBAB19EE50B700CEFC43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBBB019EE50B700CEFC43 /* XCTest.framework in Frameworks */,
+				3A7FBBB219EE50B700CEFC43 /* UIKit.framework in Frameworks */,
+				3A7FBBB119EE50B700CEFC43 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A7FBB8A19EE50B700CEFC43 = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB9C19EE50B700CEFC43 /* SkyFall */,
+				3A7FBBB519EE50B700CEFC43 /* SkyFallTests */,
+				3A7FBB9519EE50B700CEFC43 /* Frameworks */,
+				3A7FBB9419EE50B700CEFC43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A7FBB9419EE50B700CEFC43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB9319EE50B700CEFC43 /* SkyFall.app */,
+				3A7FBBAE19EE50B700CEFC43 /* SkyFallTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A7FBB9519EE50B700CEFC43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB9619EE50B700CEFC43 /* Foundation.framework */,
+				3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */,
+				3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */,
+				3A7FBBAF19EE50B700CEFC43 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A7FBB9C19EE50B700CEFC43 /* SkyFall */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBBA519EE50B700CEFC43 /* AppDelegate.h */,
+				3A7FBBA619EE50B700CEFC43 /* AppDelegate.m */,
+				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
+				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
+			);
+			path = SkyFall;
+			sourceTree = "<group>";
+		};
+		3A7FBB9D19EE50B700CEFC43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBB9E19EE50B700CEFC43 /* SkyFall-Info.plist */,
+				3A7FBB9F19EE50B700CEFC43 /* InfoPlist.strings */,
+				3A7FBBA219EE50B700CEFC43 /* main.m */,
+				3A7FBBA419EE50B700CEFC43 /* SkyFall-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A7FBBB519EE50B700CEFC43 /* SkyFallTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */,
+				3A7FBBB619EE50B700CEFC43 /* Supporting Files */,
+			);
+			path = SkyFallTests;
+			sourceTree = "<group>";
+		};
+		3A7FBBB619EE50B700CEFC43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A7FBBB719EE50B700CEFC43 /* SkyFallTests-Info.plist */,
+				3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A7FBB9219EE50B700CEFC43 /* SkyFall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7FBBBF19EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFall" */;
+			buildPhases = (
+				3A7FBB8F19EE50B700CEFC43 /* Sources */,
+				3A7FBB9019EE50B700CEFC43 /* Frameworks */,
+				3A7FBB9119EE50B700CEFC43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyFall;
+			productName = SkyFall;
+			productReference = 3A7FBB9319EE50B700CEFC43 /* SkyFall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A7FBBAD19EE50B700CEFC43 /* SkyFallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A7FBBC219EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFallTests" */;
+			buildPhases = (
+				3A7FBBAA19EE50B700CEFC43 /* Sources */,
+				3A7FBBAB19EE50B700CEFC43 /* Frameworks */,
+				3A7FBBAC19EE50B700CEFC43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A7FBBB419EE50B700CEFC43 /* PBXTargetDependency */,
+			);
+			name = SkyFallTests;
+			productName = SkyFallTests;
+			productReference = 3A7FBBAE19EE50B700CEFC43 /* SkyFallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A7FBB8B19EE50B700CEFC43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Klab Cyscorpions";
+				TargetAttributes = {
+					3A7FBBAD19EE50B700CEFC43 = {
+						TestTargetID = 3A7FBB9219EE50B700CEFC43;
+					};
+				};
+			};
+			buildConfigurationList = 3A7FBB8E19EE50B700CEFC43 /* Build configuration list for PBXProject "SkyFall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A7FBB8A19EE50B700CEFC43;
+			productRefGroup = 3A7FBB9419EE50B700CEFC43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A7FBB9219EE50B700CEFC43 /* SkyFall */,
+				3A7FBBAD19EE50B700CEFC43 /* SkyFallTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A7FBB9119EE50B700CEFC43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBBA119EE50B700CEFC43 /* InfoPlist.strings in Resources */,
+				3A7FBBA919EE50B700CEFC43 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7FBBAC19EE50B700CEFC43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBBBA19EE50B700CEFC43 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A7FBB8F19EE50B700CEFC43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBBA719EE50B700CEFC43 /* AppDelegate.m in Sources */,
+				3A7FBBA319EE50B700CEFC43 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A7FBBAA19EE50B700CEFC43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A7FBBBC19EE50B700CEFC43 /* SkyFallTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A7FBBB419EE50B700CEFC43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7FBB9219EE50B700CEFC43 /* SkyFall */;
+			targetProxy = 3A7FBBB319EE50B700CEFC43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A7FBB9F19EE50B700CEFC43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A7FBBA019EE50B700CEFC43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A7FBBB919EE50B700CEFC43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A7FBBBD19EE50B700CEFC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3A7FBBBE19EE50B700CEFC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A7FBBC019EE50B700CEFC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFall/SkyFall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3A7FBBC119EE50B700CEFC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFall/SkyFall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3A7FBBC319EE50B700CEFC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyFall.app/SkyFall";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SkyFallTests/SkyFallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3A7FBBC419EE50B700CEFC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyFall.app/SkyFall";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkyFall/SkyFall-Prefix.pch";
+				INFOPLIST_FILE = "SkyFallTests/SkyFallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A7FBB8E19EE50B700CEFC43 /* Build configuration list for PBXProject "SkyFall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7FBBBD19EE50B700CEFC43 /* Debug */,
+				3A7FBBBE19EE50B700CEFC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7FBBBF19EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7FBBC019EE50B700CEFC43 /* Debug */,
+				3A7FBBC119EE50B700CEFC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A7FBBC219EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7FBBC319EE50B700CEFC43 /* Debug */,
+				3A7FBBC419EE50B700CEFC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A7FBB8B19EE50B700CEFC43 /* Project object */;
+}

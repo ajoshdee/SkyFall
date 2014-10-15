@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0F33DB77-B6E4-47B2-90AD-00F1CF43899F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SkyFall</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>532ED4CD-A82D-4AAE-AA70-97281133E717</key>
+		<string>https://github.com/ajoshdee/SkyFall</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SkyFall/SkyFall.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>532ED4CD-A82D-4AAE-AA70-97281133E717</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ajoshdee/SkyFall</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>532ED4CD-A82D-4AAE-AA70-97281133E717</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>532ED4CD-A82D-4AAE-AA70-97281133E717</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SkyFall</string>
+		</dict>
+	</array>
+</dict>
+</plist>
