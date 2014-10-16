@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface fallingObject : UIImage
-
+@interface fallingObject : NSObject
+@property (retain, nonatomic) UIImageView *object;
+@property (nonatomic) NSInteger objectRandomPosition;
+@property (nonatomic) NSInteger screenWidth;
+@property (nonatomic) NSInteger screenHeight;
+@property (retain, nonatomic) NSMutableArray *fallingObjectArray;
+- (void)createFallingObject:(UIView *)view withCount:(int)objectCount;
+- (void)destroyFallingObject;
 @end

@@ -42,7 +42,7 @@
     // Make sure we stay within the bounds of the parent view
     
     float midPointX = CGRectGetMidX(self.bounds);
-    // If right screen bounds
+    // right screen bounds
     if (newPoint.x > self.superview.bounds.size.width  - midPointX)
         newPoint.x = self.superview.bounds.size.width - midPointX;
     else if (newPoint.x < midPointX)  // left screen bounds
