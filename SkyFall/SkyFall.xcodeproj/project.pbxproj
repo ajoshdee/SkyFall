@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A553E3919EF5DB7005FE35B /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A553E3819EF5DB7005FE35B /* meteor.png */; };
+		3A553E3C19EF6288005FE35B /* fallingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A553E3B19EF6288005FE35B /* fallingObject.m */; };
 		3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
 		3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */; };
 		3A7FBB9B19EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		3A553E3819EF5DB7005FE35B /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
+		3A553E3A19EF6288005FE35B /* fallingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallingObject.h; sourceTree = "<group>"; };
+		3A553E3B19EF6288005FE35B /* fallingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallingObject.m; sourceTree = "<group>"; };
 		3A7FBB9319EE50B700CEFC43 /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FBB9619EE50B700CEFC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */,
 				3A7FBBD119EE6FB800CEFC43 /* PlayerController.h */,
 				3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */,
+				3A553E3A19EF6288005FE35B /* fallingObject.h */,
+				3A553E3B19EF6288005FE35B /* fallingObject.m */,
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
 				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
@@ -279,6 +284,7 @@
 			files = (
 				3A7FBBA719EE50B700CEFC43 /* AppDelegate.m in Sources */,
 				3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */,
+				3A553E3C19EF6288005FE35B /* fallingObject.m in Sources */,
 				3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */,
 				3A7FBBA319EE50B700CEFC43 /* main.m in Sources */,
 			);
@@ -338,6 +344,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taro Noguchi (3KK5WW2JBX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -354,8 +361,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -376,6 +384,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taro Noguchi (3KK5WW2JBX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -386,7 +395,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
