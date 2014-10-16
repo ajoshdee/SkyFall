@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A553E3919EF5DB7005FE35B /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A553E3819EF5DB7005FE35B /* meteor.png */; };
 		3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
 		3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */; };
 		3A7FBB9B19EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A553E3819EF5DB7005FE35B /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
 		3A7FBB9319EE50B700CEFC43 /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FBB9619EE50B700CEFC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7FBBCC19EE5A0000CEFC43 /* duck.png */,
+				3A553E3819EF5DB7005FE35B /* meteor.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A553E3919EF5DB7005FE35B /* meteor.png in Resources */,
 				3A7FBBA119EE50B700CEFC43 /* InfoPlist.strings in Resources */,
 				3A7FBBA919EE50B700CEFC43 /* Images.xcassets in Resources */,
 				3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */,
@@ -473,6 +477,7 @@
 				3A7FBBC119EE50B700CEFC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A7FBBC219EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFallTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +486,7 @@
 				3A7FBBC419EE50B700CEFC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

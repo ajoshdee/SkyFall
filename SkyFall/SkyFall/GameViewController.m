@@ -12,6 +12,8 @@
 // Character Properties
 int const playerWidth = 32;
 int const playerHeight = 54;
+
+
 @interface GameViewController ()
 
 @end
@@ -21,7 +23,7 @@ int const playerHeight = 54;
 {
     self = [super init];
     if (self) {
-        PlayerController *playerView = [[PlayerController alloc] initWithFrame:CGRectMake(10, 10, playerWidth , playerHeight)];
+        PlayerController *playerView = [[PlayerController alloc] initWithFrame:CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight)];
         playerView.image = [UIImage imageNamed:@"duck.png"];
        playerView.userInteractionEnabled = YES;
         
@@ -36,6 +38,7 @@ int const playerHeight = 54;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,4 +47,10 @@ int const playerHeight = 54;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_highScoreLabel release];
+    [_energyLabel release];
+    [_scoreLabel release];
+    [super dealloc];
+}
 @end
