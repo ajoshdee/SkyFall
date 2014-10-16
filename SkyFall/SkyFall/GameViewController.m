@@ -16,6 +16,7 @@ int const playerHeight = 54;
 
 @interface GameViewController ()
 @property (retain, nonatomic) fallingObject *fallObject;
+@property (retain, nonatomic) PlayerController *player;
 @end
 
 @implementation GameViewController
@@ -28,8 +29,9 @@ int const playerHeight = 54;
           self.fallObject = [[[fallingObject alloc] init] autorelease];
         playerView.image = [UIImage imageNamed:@"duck.png"];
        playerView.userInteractionEnabled = YES;
+        self.player = playerView;
         
-        [self.view addSubview:playerView];
+        [self.view addSubview:self.player];
         
        
         
@@ -49,8 +51,14 @@ int const playerHeight = 54;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.fallObject createFallingObject: self.view withCount:5];
+    [self.fallObject createFallingObject: self.view withCount:1];
 
+    [NSTimer scheduledTimerWithTimeInterval: 0.2
+                                     target: self
+                                   selector: @selector(checkCollision:)
+                                   userInfo: nil
+                                    repeats: YES];
+    NSLog(@"%@", self.fallObject.fallingObjectArray);
 
 }
 - (void)didReceiveMemoryWarning
@@ -58,7 +66,14 @@ int const playerHeight = 54;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void) checkCollision: (NSTimer *) theTimer{
+    for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
+        UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
+        if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
+           NSLog(@"HIT");
+        }
+            }
+}
 - (void)dealloc {
     [_highScoreLabel release];
     [_energyLabel release];
