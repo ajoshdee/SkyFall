@@ -46,7 +46,7 @@ int const fallingObjectHeight = 53;
 
     [self.fallingObjectArray addObject:self.object];
         
-        float speed = [self generateRandomNumberBetweenMin:2.0 Max:5.0];
+        float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
         [self makeObjectFall:speed];
 }
 }
