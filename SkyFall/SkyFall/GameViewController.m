@@ -53,7 +53,7 @@ int const playerHeight = 54;
     [super viewWillAppear:animated];
 
 
-    [NSTimer scheduledTimerWithTimeInterval: 0.5
+    [NSTimer scheduledTimerWithTimeInterval: 0.3
                                      target: self
                                    selector: @selector(checkCollision:)
                                    userInfo: nil
