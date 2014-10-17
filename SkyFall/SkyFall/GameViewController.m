@@ -16,6 +16,7 @@ int const playerHeight = 54;
 
 @interface GameViewController ()
 @property (retain, nonatomic) fallingObject *fallObject;
+@property (retain, nonatomic) PlayerController *player;
 @end
 
 @implementation GameViewController
@@ -28,8 +29,9 @@ int const playerHeight = 54;
           self.fallObject = [[[fallingObject alloc] init] autorelease];
         playerView.image = [UIImage imageNamed:@"duck.png"];
        playerView.userInteractionEnabled = YES;
+        self.player = playerView;
         
-        [self.view addSubview:playerView];
+        [self.view addSubview:self.player];
         
        
         
@@ -49,15 +51,46 @@ int const playerHeight = 54;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.fallObject createFallingObject: self.view withCount:5];
 
 
+    [NSTimer scheduledTimerWithTimeInterval: 0.3
+                                     target: self
+                                   selector: @selector(checkCollision:)
+                                   userInfo: nil
+                                    repeats: YES];
+    [NSTimer scheduledTimerWithTimeInterval: 0.8
+                                     target: self
+                                   selector: @selector(addObject)
+                                   userInfo: nil
+                                    repeats: YES];
+
+}
+
+- (void)addObject
+{
+[self.fallObject createFallingObject: self.view withCount:1];
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void) checkCollision: (NSTimer *) theTimer{
+    for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
+        UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
+        if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
+           NSLog(@"HIT");
+        }
+        else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
+            [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
+            //[self.fallObject destroyFallingObject];
+            score++;
+            [self.scoreLabel setText:[NSString stringWithFormat:@"%i", score]];
+
+        }
+            }
+}
+
 
 - (void)dealloc {
     [_highScoreLabel release];

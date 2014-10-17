@@ -11,7 +11,14 @@ int const fallingObjectWidth = 53;
 int const fallingObjectHeight = 53;
 
 @implementation fallingObject
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.fallingObjectArray = [[[NSMutableArray alloc] init]autorelease];
+    }
+    return self;
+}
 
 - (void)createFallingObject: (UIView*)view withCount:(int)objectCount
 {
@@ -38,13 +45,15 @@ int const fallingObjectHeight = 53;
      [view addSubview:self.object];
 
     [self.fallingObjectArray addObject:self.object];
-    [self makeObjectFall];
+        
+        float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
+        [self makeObjectFall:speed];
 }
 }
 
-- (void)makeObjectFall
+- (void)makeObjectFall:(float)speed
 {
-    [UIView animateWithDuration:5.0f animations:^{
+    [UIView animateWithDuration:speed animations:^{
         self.object.frame = CGRectMake(self.objectRandomPosition, self.screenHeight, fallingObjectWidth, fallingObjectHeight);
     }];
 }
@@ -53,6 +62,12 @@ int const fallingObjectHeight = 53;
 {
     [self.object removeFromSuperview];
     [self.object.layer removeAllAnimations];
+}
+
+//generate random numbers within range
+-(int)generateRandomNumberBetweenMin:(int)min Max:(int)max
+{
+    return ( (arc4random() % (max-min+1)) + min );
 }
 
 @end
