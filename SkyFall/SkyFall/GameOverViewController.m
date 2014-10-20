@@ -75,10 +75,7 @@ NSString *const dictionaryKey = @"high scores";
 
 -(void)updateHighScore
 {
-    if([_scoreArray count] == 0){
-        [_scoreArray insertObject:_currentScore atIndex:0];
-        [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
-    }
+
     for (int i = 0; i<=[_scoreArray count]; i++) {
         if( i == [_scoreArray count]){
             [_scoreArray addObject:_currentScore];
@@ -107,35 +104,6 @@ NSString *const dictionaryKey = @"high scores";
         }
     }
     
-}
-
--(void)loadJSONFile
-{
-   NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
-     _scoreArray = [dictionary valueForKey:dictionaryKey];
-    
-}
-
--(void)writeToJSONFile
-{
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:_scoreArray
-                                                                         forKey:dictionaryKey];
-    [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
-                                                   atomically:YES
-                                                     encoding:NSUTF8StringEncoding
-                                                        error:nil];
-    
-}
-
--(NSString *)JSONFilePath
-{
-    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask,
-                                                         YES);
-    NSString *filePath = [documentDirectories firstObject];
-    
-    filePath = [filePath stringByAppendingPathComponent: @"high_scores.json"];
-    return filePath;
 }
 
 @end
