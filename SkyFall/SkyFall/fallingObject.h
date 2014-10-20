@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface fallingObject : NSObject
+@interface fallingObject : UIImageView
+
 @property (retain, nonatomic) UIImageView *object;
 @property (nonatomic) NSInteger objectRandomPosition;
 @property (nonatomic) NSInteger screenWidth;

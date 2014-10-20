@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface GameViewController : UIViewController
+
 @property (retain, nonatomic) IBOutlet UILabel *highScoreLabel;
 @property (retain, nonatomic) IBOutlet UILabel *energyLabel;
 @property (retain, nonatomic) IBOutlet UILabel *scoreLabel;
-
+@property (nonatomic, assign) int score;
 
 @end
