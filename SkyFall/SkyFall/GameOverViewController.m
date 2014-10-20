@@ -7,12 +7,12 @@
 //
 
 #import "GameOverViewController.h"
-
+#import "FileHandler.h"
 NSString *const dictionaryKey = @"high scores";
 
 @interface GameOverViewController ()
 @property (retain, nonatomic) UIAlertView *highScoreMessage;
-
+@property (retain, nonatomic) FileHandler *fileHandler;
 @end
 
 @implementation GameOverViewController
@@ -26,7 +26,8 @@ NSString *const dictionaryKey = @"high scores";
 {
     self = [super init];
     if (self) {
-        
+        self.fileHandler = [[FileHandler alloc]init];
+        _scoreArray = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -45,9 +46,10 @@ NSString *const dictionaryKey = @"high scores";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     NSLog(@"%@", _currentScore);
-    _scoreArray = [[NSMutableArray alloc]init];
     
-    [self loadJSONFile];
+    
+   _scoreArray =  [self.fileHandler loadJSONFile:dictionaryKey];
+    
     [self updateHighScore];
 
 }
@@ -73,23 +75,35 @@ NSString *const dictionaryKey = @"high scores";
 
 -(void)updateHighScore
 {
-    for (int i = 0; i<[_scoreArray count]; i++) {
+    if([_scoreArray count] == 0){
+        [_scoreArray insertObject:_currentScore atIndex:0];
+        [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
+    }
+    for (int i = 0; i<=[_scoreArray count]; i++) {
+        if( i == [_scoreArray count]){
+            [_scoreArray addObject:_currentScore];
+            [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
+            NSLog(@"file saved2");
+            return;
+            
+        }
         NSNumber *highScore = [_scoreArray objectAtIndex:i];
         
         NSLog(@"file will save %@", highScore);
         if([_currentScore intValue] > [highScore intValue]){
             [_scoreArray insertObject:_currentScore atIndex:i];
-            if( [_scoreArray count] > 3){
+            if( [_scoreArray count] > 10){
             [_scoreArray removeLastObject];
             }
             [self showAlertView];
-            [self writeToJSONFile];
-            NSLog(@"file saved");
+            [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
+            NSLog(@"file saved1");
             return;
         }
+    
         else{
-            NSLog(@"file not save");
-
+            
+            NSLog(@"file not saved");
         }
     }
     

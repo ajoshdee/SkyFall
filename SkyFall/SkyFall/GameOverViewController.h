@@ -12,4 +12,5 @@
 @property(retain,nonatomic) NSMutableArray *scoreArray;
 @property (nonatomic, assign) NSNumber *currentScore;
 @property (nonatomic, assign) int highScore;
+
 @end
