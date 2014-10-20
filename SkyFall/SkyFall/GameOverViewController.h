@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GameOverViewController : UIViewController
-
+@property(retain,nonatomic) NSMutableArray *scoreArray;
+@property (nonatomic, assign) NSNumber *currentScore;
 @end
