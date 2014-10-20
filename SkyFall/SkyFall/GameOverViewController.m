@@ -79,7 +79,10 @@ NSString *const dictionaryKey = @"high scores";
         NSLog(@"file will save %@", highScore);
         if([_currentScore intValue] > [highScore intValue]){
             [_scoreArray insertObject:_currentScore atIndex:i];
+            if( [_scoreArray count] > 3){
             [_scoreArray removeLastObject];
+            }
+            [self showAlertView];
             [self writeToJSONFile];
             NSLog(@"file saved");
             return;

@@ -104,6 +104,7 @@ int const playerHeight = 54;
     [gameOverViewController release];
     gameOverViewController = nil;
     [self resetGame];
+    [score release];
 
 }
 
