@@ -7,12 +7,20 @@
 //
 
 #import "GameOverViewController.h"
+<<<<<<< HEAD
 #import "FileHandler.h"
+=======
+
+>>>>>>> dev_1.0
 NSString *const dictionaryKey = @"high scores";
 
 @interface GameOverViewController ()
 @property (retain, nonatomic) UIAlertView *highScoreMessage;
+<<<<<<< HEAD
 @property (retain, nonatomic) FileHandler *fileHandler;
+=======
+
+>>>>>>> dev_1.0
 @end
 
 @implementation GameOverViewController
@@ -22,6 +30,7 @@ NSString *const dictionaryKey = @"high scores";
 - (IBAction)showMainMenu:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
+<<<<<<< HEAD
 - (id)init
 {
     self = [super init];
@@ -32,6 +41,17 @@ NSString *const dictionaryKey = @"high scores";
     return self;
 }
 
+=======
+/*- (id)init
+{
+    self = [super init];
+    if (self) {
+        <#statements#>
+    }
+    return self;
+}
+*/
+>>>>>>> dev_1.0
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +65,7 @@ NSString *const dictionaryKey = @"high scores";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+<<<<<<< HEAD
     NSLog(@"%@", _currentScore);
     
     
@@ -52,6 +73,8 @@ NSString *const dictionaryKey = @"high scores";
     
     [self updateHighScore];
 
+=======
+>>>>>>> dev_1.0
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +98,7 @@ NSString *const dictionaryKey = @"high scores";
 
 -(void)updateHighScore
 {
+<<<<<<< HEAD
     if([_scoreArray count] == 0){
         [_scoreArray insertObject:_currentScore atIndex:0];
         [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
@@ -105,14 +129,28 @@ NSString *const dictionaryKey = @"high scores";
             
             NSLog(@"file not saved");
         }
+=======
+    for (int i = 0; i<[_scoreArray count]; i++) {
+        NSNumber *highScore = [_scoreArray objectAtIndex:i];
+        if(_currentScore > highScore){
+            [_scoreArray insertObject:_currentScore atIndex:i];
+            [_scoreArray removeLastObject];
+        }
+      
+>>>>>>> dev_1.0
     }
     
 }
 
 -(void)loadJSONFile
 {
+<<<<<<< HEAD
    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
      _scoreArray = [dictionary valueForKey:dictionaryKey];
+=======
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
+    _scoreArray = [dictionary valueForKey:dictionaryKey];
+>>>>>>> dev_1.0
     
 }
 
@@ -129,6 +167,7 @@ NSString *const dictionaryKey = @"high scores";
 
 -(NSString *)JSONFilePath
 {
+<<<<<<< HEAD
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                          NSUserDomainMask,
                                                          YES);
@@ -136,6 +175,14 @@ NSString *const dictionaryKey = @"high scores";
     
     filePath = [filePath stringByAppendingPathComponent: @"high_scores.json"];
     return filePath;
+=======
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask,
+                                                         YES);
+    NSString *filePath = [paths firstObject];
+    
+    return [filePath stringByAppendingPathComponent:@"high_scores.json"];
+>>>>>>> dev_1.0
 }
 
 @end

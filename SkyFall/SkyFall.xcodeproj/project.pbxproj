@@ -157,6 +157,7 @@
 				3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */,
 				3AA10CF319F501F5004F3424 /* FileHandler.h */,
 				3AA10CF419F501F5004F3424 /* FileHandler.m */,
+
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
 				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,

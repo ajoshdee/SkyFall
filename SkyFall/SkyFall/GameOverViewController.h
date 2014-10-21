@@ -11,6 +11,9 @@
 @interface GameOverViewController : UIViewController
 @property(retain,nonatomic) NSMutableArray *scoreArray;
 @property (nonatomic, assign) NSNumber *currentScore;
+<<<<<<< HEAD
 @property (nonatomic, assign) int highScore;
 
+=======
+>>>>>>> dev_1.0
 @end

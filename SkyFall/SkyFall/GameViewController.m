@@ -18,8 +18,10 @@ int const playerHeight = 54;
 @interface GameViewController ()
 @property (retain, nonatomic) fallingObject *fallObject;
 @property (retain, nonatomic) PlayerController *player;
+
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
+
 @end
 
 @implementation GameViewController
@@ -69,6 +71,12 @@ int const playerHeight = 54;
 
 }
 
+
+- (void)addObject
+{
+[self.fallObject createFallingObject: self.view withCount:1];
+}
+
 - (void)addObject
 {
 [self.fallObject createFallingObject: self.view withCount:1];
@@ -91,6 +99,7 @@ int const playerHeight = 54;
             _score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
 
+       
         }
             }
 }
@@ -117,6 +126,7 @@ int const playerHeight = 54;
     
 
 }
+
 
 - (void)dealloc {
     [_highScoreLabel release];
