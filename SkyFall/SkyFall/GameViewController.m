@@ -100,13 +100,18 @@ int const playerHeight = 54;
 }
 
 -(void)gameOver{
+    
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc] init];
+   
     NSLog(@"score: %i", _score);
+    
     NSNumber *score = [[NSNumber alloc]initWithInt:_score];
     [gameOverViewController setCurrentScore:score];
     [score release];
-     [self.navigationController pushViewController:gameOverViewController animated:NO];
-   [gameOverViewController release];
+    
+    [self.navigationController pushViewController:gameOverViewController animated:NO];
+    
+    [gameOverViewController release];
     gameOverViewController = nil;
     [self resetGame];
     
