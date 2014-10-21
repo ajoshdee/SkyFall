@@ -45,7 +45,6 @@ int const fallingObjectHeight = 53;
      [view addSubview:self.object];
 
     [self.fallingObjectArray addObject:self.object];
-    
         float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
 
         [self makeObjectFall:speed];

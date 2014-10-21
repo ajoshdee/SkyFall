@@ -19,6 +19,7 @@
     
     [navcontroller setNavigationBarHidden:YES];
     self.window.rootViewController = navcontroller;
+>>>>>>> dev_1.0
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
