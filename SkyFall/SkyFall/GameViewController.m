@@ -52,7 +52,6 @@ int const playerHeight = 54;
 {
     [super viewWillAppear:animated];
 
-
     [NSTimer scheduledTimerWithTimeInterval: 0.3
                                      target: self
                                    selector: @selector(checkCollision:)
@@ -83,7 +82,7 @@ int const playerHeight = 54;
         }
         else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
-            //[self.fallObject destroyFallingObject];
+
             score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", score]];
 
