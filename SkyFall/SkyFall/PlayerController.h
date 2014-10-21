@@ -11,6 +11,7 @@
 @interface PlayerController : UIImageView
 {
     CGPoint currentPoint;
+    
 }
 
 @end

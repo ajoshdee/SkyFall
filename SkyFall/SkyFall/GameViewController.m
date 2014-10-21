@@ -10,6 +10,7 @@
 #import "PlayerController.h"
 #import "fallingObject.h"
 #import "GameOverViewController.h"
+#import "FileHandler.h"
 // Character Properties
 int const playerWidth = 32;
 int const playerHeight = 54;
@@ -82,7 +83,8 @@ int const playerHeight = 54;
     // Dispose of any resources that can be recreated.
 }
 -(void) checkCollision: (NSTimer *) theTimer{
-    for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
+    NSInteger fallingObjectCount =[self.fallObject.fallingObjectArray count];
+    for(int i = 0; i < fallingObjectCount; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
         if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
            NSLog(@"HIT");
@@ -90,7 +92,6 @@ int const playerHeight = 54;
         }
         else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
-            //[self.fallObject destroyFallingObject];
             _score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
 
@@ -103,11 +104,12 @@ int const playerHeight = 54;
     NSLog(@"score: %i", _score);
     NSNumber *score = [[NSNumber alloc]initWithInt:_score];
     [gameOverViewController setCurrentScore:score];
+    [score release];
      [self.navigationController pushViewController:gameOverViewController animated:NO];
-    [gameOverViewController release];
+   [gameOverViewController release];
     gameOverViewController = nil;
     [self resetGame];
-    [score release];
+    
 
 }
 

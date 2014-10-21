@@ -75,9 +75,10 @@
 
 -(void)updateHighScore
 {
-
-    for (int i = 0; i<=[_scoreArray count]; i++) {
-        if( i == [_scoreArray count]){
+    NSInteger scoresArray = [_scoreArray count];
+    
+    for (int i = 0; i<= scoresArray; i++) {
+        if( i == scoresArray){
             [_scoreArray addObject:_currentScore];
             [self.fileHandler writeToJSONFile:_scoreArray];
             NSLog(@"file saved2");
@@ -91,7 +92,7 @@
       
             [_scoreArray insertObject:_currentScore atIndex:i];
             
-            if( [_scoreArray count] > 10 || [highScore intValue] == 0){
+            if( scoresArray > 10 || [highScore intValue] == 0){
                 [_scoreArray removeLastObject];
             }
             
