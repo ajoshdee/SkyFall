@@ -11,7 +11,14 @@ int const fallingObjectWidth = 53;
 int const fallingObjectHeight = 53;
 
 @implementation fallingObject
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.fallingObjectArray = [[[NSMutableArray alloc] init]autorelease];
+    }
+    return self;
+}
 
 - (void)createFallingObject: (UIView*)view withCount:(int)objectCount
 {
@@ -39,7 +46,10 @@ int const fallingObjectHeight = 53;
 
     [self.fallingObjectArray addObject:self.object];
         
-        float speed = [self generateRandomNumberBetweenMin:2.0 Max:5.0];
+
+        float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
+
+
         [self makeObjectFall:speed];
 }
 }

@@ -51,15 +51,24 @@ int const playerHeight = 54;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.fallObject createFallingObject: self.view withCount:10];
+
 
     [NSTimer scheduledTimerWithTimeInterval: 0.5
                                      target: self
                                    selector: @selector(checkCollision:)
                                    userInfo: nil
                                     repeats: YES];
-   
+    [NSTimer scheduledTimerWithTimeInterval: 0.8
+                                     target: self
+                                   selector: @selector(addObject)
+                                   userInfo: nil
+                                    repeats: YES];
 
+}
+
+- (void)addObject
+{
+[self.fallObject createFallingObject: self.view withCount:1];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -74,7 +83,6 @@ int const playerHeight = 54;
         }
         else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
-            [self.fallObject destroyFallingObject];
             score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", score]];
 
