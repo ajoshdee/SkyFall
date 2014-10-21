@@ -18,9 +18,9 @@ int const playerHeight = 54;
 @interface GameViewController ()
 @property (retain, nonatomic) fallingObject *fallObject;
 @property (retain, nonatomic) PlayerController *player;
-
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
+@property (assign, nonatomic) CGRect playerOrigin;
 
 @end
 
@@ -29,7 +29,8 @@ int const playerHeight = 54;
 {
     self = [super init];
     if (self) {
-        PlayerController *playerView = [[PlayerController alloc] initWithFrame:CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight)];
+        self.playerOrigin = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
+        PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerOrigin];
         
         
         playerView.image = [UIImage imageNamed:@"duck.png"];
@@ -71,12 +72,6 @@ int const playerHeight = 54;
 
 }
 
-
-- (void)addObject
-{
-[self.fallObject createFallingObject: self.view withCount:1];
-}
-
 - (void)addObject
 {
 [self.fallObject createFallingObject: self.view withCount:1];
@@ -99,7 +94,6 @@ int const playerHeight = 54;
             _score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
 
-       
         }
             }
 }
@@ -126,7 +120,6 @@ int const playerHeight = 54;
     
 
 }
-
 
 - (void)dealloc {
     [_highScoreLabel release];

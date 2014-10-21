@@ -31,6 +31,7 @@
 		3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */; };
 		3AA10CF219F4FFAD004F3424 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */; };
 		3AA10CF519F501F5004F3424 /* FileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA10CF419F501F5004F3424 /* FileHandler.m */; };
+		3ABD63F319F5DEFD00236B63 /* high_scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 3ABD63F219F5DEFD00236B63 /* high_scores.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
 		3AA10CF319F501F5004F3424 /* FileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHandler.h; sourceTree = "<group>"; };
 		3AA10CF419F501F5004F3424 /* FileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHandler.m; sourceTree = "<group>"; };
+		3ABD63F219F5DEFD00236B63 /* high_scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = high_scores.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,6 @@
 				3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */,
 				3AA10CF319F501F5004F3424 /* FileHandler.h */,
 				3AA10CF419F501F5004F3424 /* FileHandler.m */,
-
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
 				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
@@ -197,6 +198,7 @@
 		3A7FBBCA19EE59DA00CEFC43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3ABD63F219F5DEFD00236B63 /* high_scores.json */,
 				3A7FBBCB19EE59E700CEFC43 /* Images */,
 			);
 			name = Resources;
@@ -292,6 +294,7 @@
 				3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */,
 				3A1748C619F0CFF300F1FE2E /* MainMenuViewController.xib in Resources */,
 				3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */,
+				3ABD63F319F5DEFD00236B63 /* high_scores.json in Resources */,
 				3A1748CB19F0F56F00F1FE2E /* GameOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
