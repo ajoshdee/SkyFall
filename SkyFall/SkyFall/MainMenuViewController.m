@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "GameViewController.h"
+#import "HighScoresViewController.h"
 @interface MainMenuViewController ()
 
 @end
@@ -39,6 +40,12 @@
     [self.navigationController pushViewController:gameViewController animated:NO];
     [gameViewController release];
     gameViewController = nil;
+}
+- (IBAction)showHighScore:(id)sender {
+    HighScoresViewController *highScoreVC = [[HighScoresViewController alloc]init];
+    [self.navigationController pushViewController:highScoreVC animated:NO];
+    [highScoreVC release];
+    highScoreVC = nil;
 }
 
 @end

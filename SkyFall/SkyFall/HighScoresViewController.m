@@ -7,18 +7,30 @@
 //
 
 #import "HighScoresViewController.h"
-#import "GameOverViewController.h"
+#import "FileHandler.h"
 @interface HighScoresViewController ()
-
+@property(retain,nonatomic) NSMutableArray *scoreArray;
+@property(retain,nonatomic) FileHandler *fileHandler;
 @end
 
 @implementation HighScoresViewController
+
+- (id)init
+{
+    self = [super initWithStyle:UITableViewStylePlain];
+    if(self){
+        self.fileHandler = [[[FileHandler alloc]init]autorelease];
+        _scoreArray = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+       
+        
     }
     return self;
 }
@@ -26,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _scoreArray =  [self.fileHandler loadJSONFile];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,14 +47,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // We only want to see 10 recent players
-   // if([self.scoreArray count] < NUM_OF_SCORES){
- //       return [self.scoreArray count];
-  //  }
-  //  return NUM_OF_SCORES;
+ 
+    return [self.scoreArray count];
 }
 
-*/
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]autorelease];
+    }
+    
+    [cell.textLabel setText:[self.scoreArray objectAtIndex:indexPath.row]];
+    
+    // Configure the cell...
+    
+    return cell;
+    
+ 
+}
+
 @end
