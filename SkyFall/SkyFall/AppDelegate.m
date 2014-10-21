@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate.h"
-#import "GameViewController.h"
+#import "MainMenuViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]autorelease];
     // Override point for customization after application launch.
-    GameViewController *gameViewController = [[[GameViewController alloc] init]autorelease];
-
-    self.window.rootViewController = gameViewController;
+     MainMenuViewController *mainMenuViewController = [[[MainMenuViewController alloc] init]autorelease];
+    UINavigationController *navcontroller = [[[UINavigationController alloc]initWithRootViewController:mainMenuViewController]autorelease];
+    
+    [navcontroller setNavigationBarHidden:YES];
+    self.window.rootViewController = navcontroller;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
