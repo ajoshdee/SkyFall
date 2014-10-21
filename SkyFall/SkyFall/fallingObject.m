@@ -24,7 +24,7 @@ int const fallingObjectHeight = 53;
 {
     self.screenWidth = [UIScreen mainScreen].bounds.size.width;
     self.screenHeight = [UIScreen mainScreen].bounds.size.height;
-    
+    self.fallingObjectArray = [[[NSMutableArray alloc] init]autorelease];
     for (int i = 0; i< objectCount ; i++) {
         
     
@@ -46,7 +46,10 @@ int const fallingObjectHeight = 53;
 
     [self.fallingObjectArray addObject:self.object];
         
+
         float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
+
+
         [self makeObjectFall:speed];
 }
 }
