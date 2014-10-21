@@ -26,8 +26,9 @@ NSString *const dictionaryKey = @"high scores";
 {
     self = [super init];
     if (self) {
-        self.fileHandler = [[FileHandler alloc]init];
+        self.fileHandler = [[[FileHandler alloc]init]autorelease];
         _scoreArray = [[NSMutableArray alloc]init];
+        
     }
     return self;
 }
@@ -87,11 +88,14 @@ NSString *const dictionaryKey = @"high scores";
         NSNumber *highScore = [_scoreArray objectAtIndex:i];
         
         NSLog(@"file will save %@", highScore);
-        if([_currentScore intValue] > [highScore intValue]){
+        if([_currentScore intValue] >= [highScore intValue]){
+      
             [_scoreArray insertObject:_currentScore atIndex:i];
-            if( [_scoreArray count] > 10){
-            [_scoreArray removeLastObject];
+            
+            if( [_scoreArray count] > 10 || [highScore intValue] == 0){
+                [_scoreArray removeLastObject];
             }
+            
             [self showAlertView];
             [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
             NSLog(@"file saved1");
@@ -103,7 +107,7 @@ NSString *const dictionaryKey = @"high scores";
             NSLog(@"file not saved");
         }
     }
-    
+    self.fileHandler = nil;
 }
 
 @end

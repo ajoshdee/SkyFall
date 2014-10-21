@@ -13,8 +13,16 @@
 -(NSMutableArray *)loadJSONFile: (NSString*) key
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    array = [dictionary valueForKey:key];
+    
+    NSMutableArray *array = [dictionary valueForKey:key];
+    if (!array) {
+        NSNumber *zero = [[NSNumber alloc] initWithInt:0];
+        array = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
+        [zero release];
+        
+    }
+
+   
     return array;
 }
 
