@@ -10,6 +10,6 @@
 
 @interface FileHandler : NSObject
 
--(NSMutableArray *)loadJSONFile: (NSString*) key;
--(void)writeToJSONFile:(NSMutableArray*) array usingKey: (NSString*) key;
+-(NSMutableArray *)loadJSONFile;
+-(void)writeToJSONFile:(NSMutableArray*) array;
 @end

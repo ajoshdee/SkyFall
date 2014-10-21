@@ -20,6 +20,8 @@ int const playerHeight = 54;
 @property (retain, nonatomic) PlayerController *player;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
+@property (assign, nonatomic) CGRect playerOrigin;
+
 @end
 
 @implementation GameViewController
@@ -27,7 +29,8 @@ int const playerHeight = 54;
 {
     self = [super init];
     if (self) {
-        PlayerController *playerView = [[PlayerController alloc] initWithFrame:CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight)];
+        self.playerOrigin = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
+        PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerOrigin];
         
         
         playerView.image = [UIImage imageNamed:@"duck.png"];

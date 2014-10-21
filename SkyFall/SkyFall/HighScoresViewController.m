@@ -35,6 +35,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // We only want to see 10 recent players
+   // if([self.scoreArray count] < NUM_OF_SCORES){
+ //       return [self.scoreArray count];
+  //  }
+  //  return NUM_OF_SCORES;
+}
 
-
+*/
 @end

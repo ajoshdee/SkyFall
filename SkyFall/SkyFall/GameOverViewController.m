@@ -8,7 +8,6 @@
 
 #import "GameOverViewController.h"
 #import "FileHandler.h"
-NSString *const dictionaryKey = @"high scores";
 
 @interface GameOverViewController ()
 @property (retain, nonatomic) UIAlertView *highScoreMessage;
@@ -49,7 +48,7 @@ NSString *const dictionaryKey = @"high scores";
     NSLog(@"%@", _currentScore);
     
     
-   _scoreArray =  [self.fileHandler loadJSONFile:dictionaryKey];
+   _scoreArray =  [self.fileHandler loadJSONFile];
     
     [self updateHighScore];
 
@@ -80,7 +79,7 @@ NSString *const dictionaryKey = @"high scores";
     for (int i = 0; i<=[_scoreArray count]; i++) {
         if( i == [_scoreArray count]){
             [_scoreArray addObject:_currentScore];
-            [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
+            [self.fileHandler writeToJSONFile:_scoreArray];
             NSLog(@"file saved2");
             return;
             
@@ -97,7 +96,7 @@ NSString *const dictionaryKey = @"high scores";
             }
             
             [self showAlertView];
-            [self.fileHandler writeToJSONFile:_scoreArray usingKey:dictionaryKey];
+            [self.fileHandler writeToJSONFile:_scoreArray];
             NSLog(@"file saved1");
             return;
         }

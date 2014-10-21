@@ -7,14 +7,15 @@
 //
 
 #import "FileHandler.h"
+NSString *const scoreKey = @"high scores";
 
 @implementation FileHandler
 
--(NSMutableArray *)loadJSONFile: (NSString*) key
+-(NSMutableArray *)loadJSONFile
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
     
-    NSMutableArray *array = [dictionary valueForKey:key];
+    NSMutableArray *array = [dictionary valueForKey:scoreKey];
     if (!array) {
         NSNumber *zero = [[NSNumber alloc] initWithInt:0];
         array = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
@@ -26,10 +27,10 @@
     return array;
 }
 
--(void)writeToJSONFile:(NSMutableArray*) array usingKey: (NSString*) key
+-(void)writeToJSONFile:(NSMutableArray*) array
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:array
-                                                                         forKey:key];
+                                                                         forKey:scoreKey];
     [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
                                                    atomically:YES
                                                      encoding:NSUTF8StringEncoding
