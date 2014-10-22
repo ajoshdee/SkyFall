@@ -119,12 +119,8 @@ double const floorCollisionInterval = 0.8;
     
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc] init];
    
-    NSLog(@"score: %i", _score);
-    
-   
     gameOverViewController.currentScore = [NSNumber numberWithInt:_score];
-   
-    
+       
     [self.navigationController pushViewController:gameOverViewController animated:NO];
     
     [gameOverViewController release];
