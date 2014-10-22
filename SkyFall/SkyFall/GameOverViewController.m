@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.fileHandler = [[[FileHandler alloc]init]autorelease];
-        _scoreArray = [[NSMutableArray alloc]init];
+       
         
     }
     return self;
@@ -48,7 +48,7 @@
     NSLog(@"%@", _currentScore);
     
     
-   _scoreArray =  [self.fileHandler loadJSONFile];
+   [self.fileHandler loadJSONFile];
     
     [self updateHighScore];
 
@@ -75,29 +75,29 @@
 
 -(void)updateHighScore
 {
-    NSInteger scoresArray = [_scoreArray count];
+    NSInteger scoresArray = [[self.fileHandler scoreArray] count];
     
     for (int i = 0; i<= scoresArray; i++) {
         if( i == scoresArray){
-            [_scoreArray addObject:_currentScore];
-            [self.fileHandler writeToJSONFile:_scoreArray];
+            [[self.fileHandler scoreArray] addObject:_currentScore];
+            [self.fileHandler writeToJSONFile];
             NSLog(@"file saved2");
             return;
             
         }
-        NSNumber *highScore = [_scoreArray objectAtIndex:i];
+        NSNumber *highScore = [[self.fileHandler scoreArray] objectAtIndex:i];
         
         NSLog(@"file will save %@", highScore);
         if([_currentScore intValue] >= [highScore intValue]){
       
-            [_scoreArray insertObject:_currentScore atIndex:i];
+            [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
             
             if( scoresArray > 10 || [highScore intValue] == 0){
-                [_scoreArray removeLastObject];
+                [[self.fileHandler scoreArray] removeLastObject];
             }
             
             [self showAlertView];
-            [self.fileHandler writeToJSONFile:_scoreArray];
+            [self.fileHandler writeToJSONFile];
             NSLog(@"file saved1");
             return;
         }

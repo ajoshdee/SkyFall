@@ -11,25 +11,23 @@ NSString *const scoreKey = @"high scores";
 
 @implementation FileHandler
 
--(NSMutableArray *)loadJSONFile
+-(void)loadJSONFile
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
     
-    NSMutableArray *array = [dictionary valueForKey:scoreKey];
-    if (!array) {
+   self.scoreArray = [dictionary valueForKey:scoreKey];
+    if (!self.scoreArray) {
         NSNumber *zero = [[NSNumber alloc] initWithInt:0];
-        array = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
+        self.scoreArray = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
         [zero release];
         
     }
 
-   
-    return array;
 }
 
--(void)writeToJSONFile:(NSMutableArray*) array
+-(void)writeToJSONFile
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:array
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.scoreArray
                                                                          forKey:scoreKey];
     [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
                                                    atomically:YES

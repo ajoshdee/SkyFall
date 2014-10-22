@@ -38,7 +38,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _scoreArray =  [self.fileHandler loadJSONFile];
+    [self.fileHandler loadJSONFile];
+    self.title = @"High Scores";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +57,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
  
-    return [self.scoreArray count];
+    return [[self.fileHandler scoreArray] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +69,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]autorelease];
     }
     
-    [cell.textLabel setText:[self.scoreArray objectAtIndex:indexPath.row]];
+    [cell.textLabel setText:[[self.fileHandler scoreArray] objectAtIndex:indexPath.row]];
     
     // Configure the cell...
     

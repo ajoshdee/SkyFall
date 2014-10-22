@@ -10,6 +10,7 @@
 
 @interface FileHandler : NSObject
 
--(NSMutableArray *)loadJSONFile;
--(void)writeToJSONFile:(NSMutableArray*) array;
+@property(retain, nonatomic) NSMutableArray *scoreArray;
+-(void)loadJSONFile;
+-(void)writeToJSONFile;
 @end

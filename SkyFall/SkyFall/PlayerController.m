@@ -52,33 +52,19 @@
     
     newPoint.y = [self playerBounds:pointY MidPoint:midPointY Size:self.superview.bounds.size.height];
     
-    /*
-    // right screen bounds
-    if (newPoint.x > self.superview.bounds.size.width  - midPointX)
-        newPoint.x = self.superview.bounds.size.width - midPointX;
-    else if (newPoint.x < midPointX)  // left screen bounds
-        newPoint.x = midPointX;
-    
-    
-    // bottom screen bounds
-    if (newPoint.y > self.superview.bounds.size.height  - midPointY)
-        newPoint.y = self.superview.bounds.size.height - midPointY;
-    else if (newPoint.y < midPointY)  // top screen bounds
-        newPoint.y = midPointY;
-    */
-    // Set new center location
+
     self.center = newPoint;
 }
 
-- (CGFloat)playerBounds:(CGFloat)newPoint MidPoint:(float)midPoint Size:(CGFloat)bounds
+- (CGFloat)playerBounds:(CGFloat)oldPoint MidPoint:(float)midPoint Size:(CGFloat)bounds
 
 {
-    if (newPoint > bounds  - midPoint)
-        newPoint = bounds - midPoint;
-    else if (newPoint < midPoint)
-        newPoint = midPoint;
+    if (oldPoint > bounds  - midPoint)
+        oldPoint = bounds - midPoint;
+    else if (oldPoint < midPoint)
+        oldPoint = midPoint;
     
-    return newPoint;
+    return oldPoint;
 }
 
 @end

@@ -14,7 +14,8 @@
 // Character Properties
 int const playerWidth = 32;
 int const playerHeight = 54;
-
+double const fallingObjectInterval = 0.1;
+double const floorCollisionInterval = 0.8;
 
 @interface GameViewController ()
 @property (retain, nonatomic) fallingObject *fallObject;
@@ -60,12 +61,13 @@ int const playerHeight = 54;
     [super viewWillAppear:animated];
     self.fallObject = [[[fallingObject alloc] init] autorelease];
 
-    self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: 0.1
+    self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: fallingObjectInterval
                                      target: self
                                    selector: @selector(checkCollision:)
                                    userInfo: nil
                                     repeats: YES];
-    self.floorCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: 0.8
+    
+    self.floorCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: floorCollisionInterval
                                      target: self
                                    selector: @selector(addObject)
                                    userInfo: nil
@@ -75,7 +77,7 @@ int const playerHeight = 54;
 
 - (void)addObject
 {
-[self.fallObject createFallingObject: self.view withCount:1];
+[self.fallObject createFallingObject: self.view withCount:2];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -87,7 +89,7 @@ int const playerHeight = 54;
     for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
         if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
-           NSLog(@"HIT");
+          
             [self gameOver];
         }
         else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
