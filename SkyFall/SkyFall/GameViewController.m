@@ -22,7 +22,7 @@ int const playerHeight = 54;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
 @property (assign, nonatomic) CGRect playerOrigin;
-
+@property (assign, nonatomic) NSInteger fallingObjectCount;
 @end
 
 @implementation GameViewController
@@ -33,14 +33,14 @@ int const playerHeight = 54;
         self.playerOrigin = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
         PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerOrigin];
         
-        
         playerView.image = [UIImage imageNamed:@"duck.png"];
-       playerView.userInteractionEnabled = YES;
+        playerView.userInteractionEnabled = YES;
         self.player = playerView;
         
         [self.view addSubview:self.player];
-        
         [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
+        
+        
         
         [playerView release];
     }
@@ -52,7 +52,7 @@ int const playerHeight = 54;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    _fallingObjectCount =[self.fallObject.fallingObjectArray count];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,8 +83,8 @@ int const playerHeight = 54;
     // Dispose of any resources that can be recreated.
 }
 -(void) checkCollision: (NSTimer *) theTimer{
-    NSInteger fallingObjectCount =[self.fallObject.fallingObjectArray count];
-    for(int i = 0; i < fallingObjectCount; i++) {
+  
+    for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
         if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
            NSLog(@"HIT");
