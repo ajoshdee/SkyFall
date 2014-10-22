@@ -69,11 +69,11 @@ NSString *const title = @"High Scores";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier]autorelease];
     }
     
-    [cell.textLabel setText:[[self.fileHandler scoreArray] objectAtIndex:indexPath.row]];
-    
+    [cell.textLabel setText:[[self.fileHandler nameArray] objectAtIndex:indexPath.row]];
+    [cell.detailTextLabel setText:[[self.fileHandler scoreArray] objectAtIndex:indexPath.row]];
     
     return cell;
     
