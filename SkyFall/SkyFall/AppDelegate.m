@@ -14,14 +14,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]autorelease];
+    
     // Override point for customization after application launch.
     MainMenuViewController *mainMenuViewController = [[[MainMenuViewController alloc] init]autorelease];
     UINavigationController *navcontroller = [[[UINavigationController alloc]initWithRootViewController:mainMenuViewController]autorelease];
     
    [navcontroller setNavigationBarHidden:YES];
     self.window.rootViewController = navcontroller;
-    //GameOverViewController *gameOverViewController = [[[GameOverViewController alloc] init]autorelease];
-    //self.window.rootViewController = gameOverViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
         [[UIApplication sharedApplication] setStatusBarHidden:YES];

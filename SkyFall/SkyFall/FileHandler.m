@@ -8,6 +8,7 @@
 
 #import "FileHandler.h"
 NSString *const scoreKey = @"high scores";
+NSString *const nameKey = @"player names";
 
 @implementation FileHandler
 
@@ -15,9 +16,12 @@ NSString *const scoreKey = @"high scores";
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
     
-   self.scoreArray = [dictionary valueForKey:scoreKey];
-    if (!self.scoreArray) {
-        NSNumber *zero = [[NSNumber alloc] initWithInt:0];
+    self.scoreArray = [dictionary valueForKey:scoreKey];
+    self.nameArray = [dictionary valueForKey:nameKey];
+    if (!self.scoreArray || !self.nameArray) {
+        NSNumber *zero = [NSNumber numberWithInt:0];
+        NSString *name = @"";
+        self.nameArray = [[[NSMutableArray alloc]initWithObjects: name, nil]autorelease];
         self.scoreArray = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
         [zero release];
         
@@ -27,8 +31,8 @@ NSString *const scoreKey = @"high scores";
 
 -(void)writeToJSONFile
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObject:self.scoreArray
-                                                                         forKey:scoreKey];
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:self.scoreArray,
+                                                                         scoreKey,self.nameArray,nameKey, nil];
     [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
                                                    atomically:YES
                                                      encoding:NSUTF8StringEncoding

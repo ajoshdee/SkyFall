@@ -9,6 +9,10 @@
 #import "GameOverViewController.h"
 #import "FileHandler.h"
 
+NSString *const alertTitle = @"New High Score!";
+NSString *const alertMessage = @"Enter your name";
+NSString *const alertOption = @"Done";
+
 @interface GameOverViewController ()
 @property (retain, nonatomic) UIAlertView *highScoreMessage;
 @property (retain, nonatomic) FileHandler *fileHandler;
@@ -47,11 +51,11 @@
 }
 -(void)showAlertView
 {
-    self.highScoreMessage =[[[UIAlertView alloc ] initWithTitle:@"New High Score!"
-                                                    message:@"Enter your name"
+    self.highScoreMessage =[[[UIAlertView alloc ] initWithTitle:alertTitle
+                                                    message:alertMessage
                                                    delegate:self
                                           cancelButtonTitle:nil
-                                          otherButtonTitles: @"Done", nil] autorelease];
+                                          otherButtonTitles: alertOption, nil] autorelease];
     self.highScoreMessage.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [self.highScoreMessage show];
@@ -59,13 +63,19 @@
 
 }
 
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+}
+
 -(void)updateHighScore
 {
-    NSInteger scoresArray = [[self.fileHandler scoreArray] count];
+    NSInteger scoresArrayCount = [[self.fileHandler scoreArray] count];
     
-    for (int i = 0; i<= scoresArray; i++) {
-        if( i == scoresArray){
+    for (int i = 0; i<= scoresArrayCount; i++) {
+        if( i == scoresArrayCount){
             [[self.fileHandler scoreArray] addObject:_currentScore];
+            
             [self.fileHandler writeToJSONFile];
             
             return;
@@ -75,15 +85,23 @@
         
         
         if([_currentScore intValue] >= [highScore intValue]){
-      
+           
+            [self showAlertView];
+            
+            NSString *playerName = [self.highScoreMessage textFieldAtIndex:0].text;
+            
+            [[self.fileHandler nameArray] insertObject:playerName atIndex:i];
+            NSLog(@"name %@", [self.fileHandler nameArray]);
             [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
             
-            if( scoresArray > 10 || [highScore intValue] == 0){
+            if( scoresArrayCount > 10 || [highScore intValue] == 0){
                 [[self.fileHandler scoreArray] removeLastObject];
+                [[self.fileHandler nameArray] removeLastObject];
             }
             
-            [self showAlertView];
-            [self.fileHandler writeToJSONFile];
+            
+           [self.fileHandler writeToJSONFile];
+            
            
             return;
         }
