@@ -23,7 +23,7 @@ NSString *const nameKey = @"player names";
         NSString *name = @"";
         self.nameArray = [[[NSMutableArray alloc]initWithObjects: name, nil]autorelease];
         self.scoreArray = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
-        [zero release];
+        
         
     }
 

@@ -15,6 +15,7 @@
 @property (nonatomic) NSInteger screenWidth;
 @property (nonatomic) NSInteger screenHeight;
 @property (retain, nonatomic) NSMutableArray *fallingObjectArray;
+
 - (void)createFallingObject:(UIView *)view withCount:(int)objectCount;
 - (void)destroyFallingObject;
 @end

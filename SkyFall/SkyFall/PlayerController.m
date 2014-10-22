@@ -15,13 +15,16 @@
 {
     if (self = [super initWithImage:image])
         self.userInteractionEnabled = YES;
+   
     return self;
 }
+
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     // When a touch starts, get the current location in the view
     currentPoint = [[touches anyObject] locationInView:self];
 }
+
 - (void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
     // Get active location upon move

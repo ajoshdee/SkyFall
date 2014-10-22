@@ -28,12 +28,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)playButton:(id)sender {
     GameViewController *gameViewController = [[GameViewController alloc] init];
     [self.navigationController pushViewController:gameViewController animated:NO];
     [gameViewController release];
     gameViewController = nil;
 }
+
 - (IBAction)showHighScore:(id)sender {
     HighScoresViewController *highScoreVC = [[HighScoresViewController alloc]init];
     [self.navigationController pushViewController:highScoreVC animated:NO];

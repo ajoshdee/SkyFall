@@ -10,6 +10,6 @@
 
 @interface GameOverViewController : UIViewController <UIAlertViewDelegate>
 
-@property (nonatomic, assign) NSNumber *currentScore;
+@property (nonatomic, retain) NSNumber *currentScore;
 
 @end

@@ -25,6 +25,7 @@ double const floorCollisionInterval = 0.8;
 @property (assign, nonatomic) CGRect playerFrame;
 @property (assign, nonatomic) NSInteger fallingObjectCount;
 @property (retain, nonatomic) FileHandler *fileHandler;
+@property (nonatomic, assign) int score;
 @end
 
 @implementation GameViewController
@@ -48,7 +49,6 @@ double const floorCollisionInterval = 0.8;
     }
     return self;
 }
-
 
 - (void)viewDidLoad
 {
@@ -88,11 +88,13 @@ double const floorCollisionInterval = 0.8;
 [self.fallObject createFallingObject: self.view withCount:2];
     
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void) checkCollision: (NSTimer *) theTimer{
    _fallingObjectCount =[self.fallObject.fallingObjectArray count];
    

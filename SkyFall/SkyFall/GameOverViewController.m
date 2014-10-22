@@ -12,6 +12,7 @@
 NSString *const alertTitle = @"New High Score!";
 NSString *const alertMessage = @"Enter your name";
 NSString *const alertOption = @"Done";
+NSInteger const topTen = 10;
 
 @interface GameOverViewController ()
 {
@@ -29,9 +30,11 @@ NSString *const alertOption = @"Done";
 - (IBAction)showGameScreen:(id)sender {
     [self.navigationController popToViewController:[self.navigationController viewControllers][1] animated:NO];
 }
+
 - (IBAction)showMainMenu:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
+
 - (id)init
 {
     self = [super init];
@@ -56,6 +59,7 @@ NSString *const alertOption = @"Done";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)showAlertView
 {
     self.highScoreMessage =[[[UIAlertView alloc ] initWithTitle:alertTitle
@@ -83,7 +87,7 @@ NSString *const alertOption = @"Done";
 
         self.highScore = [[self.fileHandler scoreArray] objectAtIndex:i];
         
-        if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= 10){
+        if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= topTen){
            
             [self showAlertView];
  
