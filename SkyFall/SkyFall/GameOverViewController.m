@@ -79,26 +79,14 @@ NSString *const alertOption = @"Done";
 {
    self.scoreArrayCount = [[self.fileHandler scoreArray] count];
     
-    for (i = 0; i<= self.scoreArrayCount; i++) {
-        if( i == self.scoreArrayCount){
-            [[self.fileHandler scoreArray] addObject:_currentScore];
-            
-            [self.fileHandler writeToJSONFile];
-            
-            return;
-            
-        }
+    for (i = 0; i< self.scoreArrayCount; i++) {
+
         self.highScore = [[self.fileHandler scoreArray] objectAtIndex:i];
         
-        
-        if([_currentScore intValue] >= [self.highScore intValue]){
+        if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= 10){
            
             [self showAlertView];
-            
-           
-
-            
-           
+ 
             return;
         }
     
@@ -114,7 +102,7 @@ NSString *const alertOption = @"Done";
     NSLog(@"name %@", [self.fileHandler nameArray]);
     [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
     
-    if( self.scoreArrayCount > 10 || [self.highScore intValue] == 0){
+    if([self.highScore intValue] == 0){
         [[self.fileHandler scoreArray] removeLastObject];
         [[self.fileHandler nameArray] removeLastObject];
     }
