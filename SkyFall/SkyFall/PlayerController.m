@@ -10,14 +10,7 @@
 
 @implementation PlayerController
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
+
 - (id)initWithImage:(UIImage *)image
 {
     if (self = [super initWithImage:image])

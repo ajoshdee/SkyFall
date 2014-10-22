@@ -22,8 +22,9 @@ double const floorCollisionInterval = 0.8;
 @property (retain, nonatomic) PlayerController *player;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
-@property (assign, nonatomic) CGRect playerOrigin;
+@property (assign, nonatomic) CGRect playerFrame;
 @property (assign, nonatomic) NSInteger fallingObjectCount;
+@property (retain, nonatomic) FileHandler *fileHandler;
 @end
 
 @implementation GameViewController
@@ -31,8 +32,10 @@ double const floorCollisionInterval = 0.8;
 {
     self = [super init];
     if (self) {
-        self.playerOrigin = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
-        PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerOrigin];
+        self.fileHandler = [[[FileHandler alloc]init]autorelease];
+        
+        self.playerFrame = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
+        PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerFrame];
         
         playerView.image = [UIImage imageNamed:@"duck.png"];
         playerView.userInteractionEnabled = YES;
@@ -40,9 +43,7 @@ double const floorCollisionInterval = 0.8;
         
         [self.view addSubview:self.player];
         [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
-        
-        
-        
+       
         [playerView release];
     }
     return self;
@@ -53,31 +54,39 @@ double const floorCollisionInterval = 0.8;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    _fallingObjectCount =[self.fallObject.fallingObjectArray count];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.fileHandler loadJSONFile];
+    
+    int highScore = [[[self.fileHandler scoreArray] firstObject] intValue];
+
+    [self.highScoreLabel setText:[NSString stringWithFormat:@"%i", highScore]];
+    
     self.fallObject = [[[fallingObject alloc] init] autorelease];
 
     self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: fallingObjectInterval
                                      target: self
-                                   selector: @selector(checkCollision:)
-                                   userInfo: nil
-                                    repeats: YES];
+                                     selector: @selector(checkCollision:)
+                                     userInfo: nil
+                                     repeats: YES];
     
     self.floorCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: floorCollisionInterval
                                      target: self
-                                   selector: @selector(addObject)
-                                   userInfo: nil
-                                    repeats: YES];
+                                     selector: @selector(addObject)
+                                     userInfo: nil
+                                     repeats: YES];
 
 }
 
 - (void)addObject
 {
 [self.fallObject createFallingObject: self.view withCount:2];
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -85,15 +94,18 @@ double const floorCollisionInterval = 0.8;
     // Dispose of any resources that can be recreated.
 }
 -(void) checkCollision: (NSTimer *) theTimer{
-  
-    for(int i = 0; i < [self.fallObject.fallingObjectArray count]; i++) {
+   _fallingObjectCount =[self.fallObject.fallingObjectArray count];
+   
+    for(int i = 0; i < _fallingObjectCount; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
+        _fallingObjectCount =[self.fallObject.fallingObjectArray count];
         if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
           
             [self gameOver];
         }
         else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
+            
             _score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
 
@@ -108,13 +120,14 @@ double const floorCollisionInterval = 0.8;
     NSLog(@"score: %i", _score);
     
     NSNumber *score = [[NSNumber alloc]initWithInt:_score];
-    [gameOverViewController setCurrentScore:score];
+    gameOverViewController.currentScore = score;
     [score release];
     
     [self.navigationController pushViewController:gameOverViewController animated:NO];
     
     [gameOverViewController release];
     gameOverViewController = nil;
+    //self.player = nil;
     [self resetGame];
     
 
@@ -131,9 +144,9 @@ double const floorCollisionInterval = 0.8;
 }
 
 - (void)dealloc {
-    [_highScoreLabel release];
-    [_energyLabel release];
-    [_scoreLabel release];
+    self.highScoreLabel = nil;
+    self.energyLabel = nil;
+    self.scoreLabel = nil;
     [super dealloc];
 }
 @end
