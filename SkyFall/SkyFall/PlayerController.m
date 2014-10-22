@@ -52,10 +52,12 @@
 - (CGFloat)playerBounds:(CGFloat)oldPoint MidPoint:(float)midPoint Size:(CGFloat)bounds
 
 {
-    if (oldPoint > bounds  - midPoint)
+    if (oldPoint > bounds  - midPoint){
         oldPoint = bounds - midPoint;
-    else if (oldPoint < midPoint)
+    }
+    else if (oldPoint < midPoint){
         oldPoint = midPoint;
+    }
     
     return oldPoint;
 }

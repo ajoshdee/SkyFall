@@ -8,7 +8,7 @@
 
 #import "GameViewController.h"
 #import "PlayerController.h"
-#import "fallingObject.h"
+#import "FallingObject.h"
 #import "GameOverViewController.h"
 #import "FileHandler.h"
 // Character Properties
@@ -18,7 +18,7 @@ double const fallingObjectInterval = 0.1;
 double const floorCollisionInterval = 0.8;
 
 @interface GameViewController ()
-@property (retain, nonatomic) fallingObject *fallObject;
+@property (retain, nonatomic) FallingObject *fallObject;
 @property (retain, nonatomic) PlayerController *player;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
@@ -67,7 +67,7 @@ double const floorCollisionInterval = 0.8;
 
     [self.highScoreLabel setText:[NSString stringWithFormat:@"%i", highScore]];
     
-    self.fallObject = [[[fallingObject alloc] init] autorelease];
+    self.fallObject = [[[FallingObject alloc] init] autorelease];
 
     self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: fallingObjectInterval
                                      target: self
@@ -99,18 +99,20 @@ double const floorCollisionInterval = 0.8;
     for(int i = 0; i < _fallingObjectCount; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
         _fallingObjectCount =[self.fallObject.fallingObjectArray count];
+        
         if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
           
             [self gameOver];
         }
-        else if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
+        
+        if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
             
             _score++;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
 
         }
-            }
+    }
 }
 
 -(void)gameOver{
@@ -120,14 +122,14 @@ double const floorCollisionInterval = 0.8;
     NSLog(@"score: %i", _score);
     
    
-    gameOverViewController.currentScore = [[NSNumber alloc]initWithInt:_score];
+    gameOverViewController.currentScore = [NSNumber numberWithInt:_score];
    
     
     [self.navigationController pushViewController:gameOverViewController animated:NO];
     
     [gameOverViewController release];
     gameOverViewController = nil;
-    //self.player = nil;
+    
     [self resetGame];
     
 

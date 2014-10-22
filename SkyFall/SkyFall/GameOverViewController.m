@@ -89,7 +89,7 @@ NSString *const alertOption = @"Done";
             [self showAlertView];
             
             NSString *playerName = [self.highScoreMessage textFieldAtIndex:0].text;
-            
+             NSLog(@"Myname %@", playerName);
             [[self.fileHandler nameArray] insertObject:playerName atIndex:i];
             NSLog(@"name %@", [self.fileHandler nameArray]);
             [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];

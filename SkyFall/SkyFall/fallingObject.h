@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface fallingObject : UIImageView
+@interface FallingObject : UIImageView
 
 @property (retain, nonatomic) UIImageView *object;
 @property (nonatomic) NSInteger objectRandomPosition;

@@ -8,6 +8,9 @@
 
 #import "HighScoresViewController.h"
 #import "FileHandler.h"
+
+NSString *const title = @"High Scores";
+
 @interface HighScoresViewController ()
 @property(retain,nonatomic) NSMutableArray *scoreArray;
 @property(retain,nonatomic) FileHandler *fileHandler;
@@ -39,7 +42,7 @@
 {
     [super viewDidLoad];
     [self.fileHandler loadJSONFile];
-    self.title = @"High Scores";
+    self.title = title;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -71,7 +74,6 @@
     
     [cell.textLabel setText:[[self.fileHandler scoreArray] objectAtIndex:indexPath.row]];
     
-    // Configure the cell...
     
     return cell;
     
