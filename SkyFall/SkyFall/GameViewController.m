@@ -12,9 +12,13 @@
 #import "GameOverViewController.h"
 #import "FileHandler.h"
 // Character Properties
-int const playerWidth = 32;
-int const playerHeight = 54;
+int const playerWidth = 38;
+int const playerHeight = 65;
+
+//falling object property
 int const numberOfObjects = 2;
+
+//collison detection
 double const fallingObjectInterval = 0.1;
 double const floorCollisionInterval = 0.8;
 
@@ -35,7 +39,7 @@ double const floorCollisionInterval = 0.8;
     if (self) {
         self.fileHandler = [[[FileHandler alloc]init]autorelease];
         
-        self.playerFrame = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.75), playerWidth , playerHeight);
+        self.playerFrame = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.70), playerWidth , playerHeight);
         PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerFrame];
         
         playerView.image = [UIImage imageNamed:@"duck.png"];

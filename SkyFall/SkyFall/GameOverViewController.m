@@ -96,7 +96,7 @@ NSInteger const topTen = 10;
         }
     
     }
-    self.fileHandler = nil;
+    
 }
 
 -(void)updateScore
@@ -110,19 +110,19 @@ NSInteger const topTen = 10;
     
     [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
     NSInteger newScoreArrayCount = [[self.fileHandler scoreArray] count];
-    NSLog(@"count %ld", (long)newScoreArrayCount);
+   
     if(newScoreArrayCount > topTen ||[self.highScore intValue] == 0){
         [[self.fileHandler scoreArray] removeLastObject];
         [[self.fileHandler nameArray] removeLastObject];
     }
     
-    
     [self.fileHandler writeToJSONFile];
+    [_highScore release];
 }
 
 - (void)dealloc {
     i = 0;
-
+    
     [super dealloc];
 }
 

@@ -17,7 +17,6 @@ NSString *const errorOption = @"Ok";
 
 @interface MainMenuViewController ()
 @property (retain, nonatomic) FileHandler *fileHandler;
-@property (retain, nonatomic) UIAlertView *errorMessage;
 
 @end
 
@@ -67,13 +66,14 @@ NSString *const errorOption = @"Ok";
 
 -(void)showAlertView
 {
-    self.errorMessage =[[[UIAlertView alloc ] initWithTitle:errorTitle
+    UIAlertView *errorAlert;
+    errorAlert =[[[UIAlertView alloc ] initWithTitle:errorTitle
                                                         message:errorMessage
                                                         delegate:self
                                                         cancelButtonTitle:nil
                                                         otherButtonTitles: errorOption, nil] autorelease];
     
-    [self.errorMessage show];
+    [errorAlert show];
     
     
 }
