@@ -76,6 +76,7 @@ NSInteger const topTen = 10;
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    
     [self updateScore];
 }
 
@@ -101,12 +102,16 @@ NSInteger const topTen = 10;
 -(void)updateScore
 {
     self.playerName = [self.highScoreMessage textFieldAtIndex:0].text;
-   
+    if((!self.playerName) || ([self.playerName  isEqual: @""])){
+        [self showAlertView];
+        return;
+    }
     [[self.fileHandler nameArray] insertObject:self.playerName atIndex:i];
     
     [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
-    
-    if([self.highScore intValue] == 0){
+    NSInteger newScoreArrayCount = [[self.fileHandler scoreArray] count];
+    NSLog(@"count %ld", (long)newScoreArrayCount);
+    if(newScoreArrayCount > topTen ||[self.highScore intValue] == 0){
         [[self.fileHandler scoreArray] removeLastObject];
         [[self.fileHandler nameArray] removeLastObject];
     }
