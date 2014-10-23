@@ -15,15 +15,14 @@ int const fallingObjectHeight = 53;
 {
     self = [super init];
     if (self) {
-        self.fallingObjectArray = [[[NSMutableArray alloc] init]autorelease];
+        self.screenWidth = [UIScreen mainScreen].bounds.size.width;
+        self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     }
     return self;
 }
 
 - (void)createFallingObject: (UIView*)view withCount:(int)objectCount
 {
-    self.screenWidth = [UIScreen mainScreen].bounds.size.width;
-    self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     
     for (int i = 0; i< objectCount ; i++) {
         
@@ -49,6 +48,7 @@ int const fallingObjectHeight = 53;
         float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
         [self makeObjectFall:speed];
     }
+    //[_fallingObjectArray release];
 }
 
 - (void)makeObjectFall:(float)speed
@@ -58,16 +58,23 @@ int const fallingObjectHeight = 53;
     }];
 }
 
-- (void)destroyFallingObject
-{
-    [self.object removeFromSuperview];
-    [self.object.layer removeAllAnimations];
-}
-
 //generate random numbers within range
 -(int)generateRandomNumberBetweenMin:(int)min Max:(int)max
 {
     return ( (arc4random() % (max-min+1)) + min );
+}
+
+- (NSMutableArray *) fallingObjectArray
+{
+    if (!_fallingObjectArray) {
+        _fallingObjectArray = [NSMutableArray new];
+    }
+    return _fallingObjectArray;
+
+}
+- (void)dealloc {
+    [_fallingObjectArray release];
+    [super dealloc];
 }
 
 @end

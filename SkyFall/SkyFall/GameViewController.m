@@ -14,6 +14,7 @@
 // Character Properties
 int const playerWidth = 32;
 int const playerHeight = 54;
+int const numberOfObjects = 2;
 double const fallingObjectInterval = 0.1;
 double const floorCollisionInterval = 0.8;
 
@@ -23,7 +24,6 @@ double const floorCollisionInterval = 0.8;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
 @property (assign, nonatomic) CGRect playerFrame;
-@property (assign, nonatomic) NSInteger fallingObjectCount;
 @property (retain, nonatomic) FileHandler *fileHandler;
 @property (nonatomic, assign) int score;
 @end
@@ -71,7 +71,7 @@ double const floorCollisionInterval = 0.8;
 
     self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: fallingObjectInterval
                                      target: self
-                                     selector: @selector(checkCollision:)
+                                     selector: @selector(checkCollision)
                                      userInfo: nil
                                      repeats: YES];
     
@@ -85,8 +85,7 @@ double const floorCollisionInterval = 0.8;
 
 - (void)addObject
 {
-[self.fallObject createFallingObject: self.view withCount:2];
-    
+    [self.fallObject createFallingObject: self.view withCount:numberOfObjects];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,12 +94,14 @@ double const floorCollisionInterval = 0.8;
     // Dispose of any resources that can be recreated.
 }
 
--(void) checkCollision: (NSTimer *) theTimer{
-   _fallingObjectCount =[self.fallObject.fallingObjectArray count];
+-(void) checkCollision{
+    
+   NSInteger fallingObjectCount  =[self.fallObject.fallingObjectArray count];
    
-    for(int i = 0; i < _fallingObjectCount; i++) {
+    for(int i = 0; i < fallingObjectCount; i++) {
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
-        _fallingObjectCount =[self.fallObject.fallingObjectArray count];
+        
+        fallingObjectCount =[self.fallObject.fallingObjectArray count];
         
         if ([self isColliding:[[theView.layer presentationLayer] frame] withSecondFrame:self.player.frame]) {
           

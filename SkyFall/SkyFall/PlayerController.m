@@ -8,6 +8,10 @@
 
 #import "PlayerController.h"
 
+@interface PlayerController ()
+@property (nonatomic, assign) CGPoint currentPoint;
+@end
+
 @implementation PlayerController
 
 
@@ -22,7 +26,7 @@
 - (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     // When a touch starts, get the current location in the view
-    currentPoint = [[touches anyObject] locationInView:self];
+    _currentPoint = [[touches anyObject] locationInView:self];
 }
 
 - (void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
@@ -31,8 +35,8 @@
     CGPoint activePoint = [[touches anyObject] locationInView:self];
     
     // Determine new point based on where the touch is now located
-    CGPoint newPoint = CGPointMake(self.center.x + (activePoint.x - currentPoint.x),
-                                   self.center.y + (activePoint.y - currentPoint.y));
+    CGPoint newPoint = CGPointMake(self.center.x + (activePoint.x - _currentPoint.x),
+                                   self.center.y + (activePoint.y - _currentPoint.y));
     
     
     // Make sure we stay within the bounds of the parent view

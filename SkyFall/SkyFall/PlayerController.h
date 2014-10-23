@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayerController : UIImageView
-{
-    CGPoint currentPoint;
-    
-}
+
 
 @end
