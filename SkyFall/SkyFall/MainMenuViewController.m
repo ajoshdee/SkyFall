@@ -9,18 +9,34 @@
 #import "MainMenuViewController.h"
 #import "GameViewController.h"
 #import "HighScoresViewController.h"
+#import "FileHandler.h"
+
+NSString *const errorTitle = @"Error";
+NSString *const errorMessage = @"No High Score to Show";
+NSString *const errorOption = @"Ok";
+
 @interface MainMenuViewController ()
+@property (retain, nonatomic) FileHandler *fileHandler;
+@property (retain, nonatomic) UIAlertView *errorMessage;
 
 @end
 
 @implementation MainMenuViewController
 
-
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.fileHandler = [[[FileHandler alloc]init]autorelease];
+        
+    }
+    return self;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    
+    [self.fileHandler loadJSONFile];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,10 +53,29 @@
 }
 
 - (IBAction)showHighScore:(id)sender {
-    HighScoresViewController *highScoreVC = [[HighScoresViewController alloc]init];
-    [self.navigationController pushViewController:highScoreVC animated:NO];
-    [highScoreVC release];
-    highScoreVC = nil;
+    
+    if ([[[self.fileHandler nameArray] firstObject] isEqualToString:@""]) {
+        [self showAlertView];
+    }
+    else{
+        HighScoresViewController *highScoreVC = [[HighScoresViewController alloc]init];
+        [self.navigationController pushViewController:highScoreVC animated:NO];
+        [highScoreVC release];
+        highScoreVC = nil;
+    }
+}
+
+-(void)showAlertView
+{
+    self.errorMessage =[[[UIAlertView alloc ] initWithTitle:errorTitle
+                                                        message:errorMessage
+                                                        delegate:self
+                                                        cancelButtonTitle:nil
+                                                        otherButtonTitles: errorOption, nil] autorelease];
+    
+    [self.errorMessage show];
+    
+    
 }
 
 @end

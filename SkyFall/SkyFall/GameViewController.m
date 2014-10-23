@@ -102,12 +102,12 @@ double const floorCollisionInterval = 0.8;
         UIImageView *theView = [self.fallObject.fallingObjectArray objectAtIndex:i];
         _fallingObjectCount =[self.fallObject.fallingObjectArray count];
         
-        if (CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.player.frame)) {
+        if ([self isColliding:[[theView.layer presentationLayer] frame] withSecondFrame:self.player.frame]) {
           
             [self gameOver];
         }
-        
-        if (!CGRectIntersectsRect([[theView.layer presentationLayer] frame], self.view.frame)){
+   
+        if (![self isColliding:[[theView.layer presentationLayer] frame] withSecondFrame:self.view.frame]){
             [self.fallObject.fallingObjectArray removeObjectAtIndex:i];
             
             _score++;
@@ -115,6 +115,10 @@ double const floorCollisionInterval = 0.8;
 
         }
     }
+}
+
+- (BOOL) isColliding:(CGRect)firstFrame withSecondFrame:(CGRect)secondFrame {
+    return CGRectIntersectsRect(firstFrame, secondFrame);
 }
 
 -(void)gameOver{
@@ -139,7 +143,7 @@ double const floorCollisionInterval = 0.8;
     [self.floorCollisionTimer invalidate];
     [self setScore:0];
     [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
-    
+    self.player.frame = self.playerFrame;    
 
 }
 

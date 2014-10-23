@@ -51,7 +51,7 @@ NSInteger const topTen = 10;
 
     [self.fileHandler loadJSONFile];
     [self checkHighScore];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,9 +101,9 @@ NSInteger const topTen = 10;
 -(void)updateScore
 {
     self.playerName = [self.highScoreMessage textFieldAtIndex:0].text;
-    NSLog(@"Myname %@", self.playerName);
+   
     [[self.fileHandler nameArray] insertObject:self.playerName atIndex:i];
-    NSLog(@"name %@", [self.fileHandler nameArray]);
+    
     [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
     
     if([self.highScore intValue] == 0){
