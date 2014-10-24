@@ -12,6 +12,7 @@
 		3A1748C619F0CFF300F1FE2E /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1748C419F0CFF300F1FE2E /* MainMenuViewController.xib */; };
 		3A1748CA19F0F56F00F1FE2E /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1748C819F0F56F00F1FE2E /* GameOverViewController.m */; };
 		3A1748CB19F0F56F00F1FE2E /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1748C919F0F56F00F1FE2E /* GameOverViewController.xib */; };
+		3A4EAD6D19F9E9E10001950F /* SharedScoreArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */; };
 		3A553E3919EF5DB7005FE35B /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A553E3819EF5DB7005FE35B /* meteor.png */; };
 		3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
 		3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		3A1748C719F0F56F00F1FE2E /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		3A1748C819F0F56F00F1FE2E /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		3A1748C919F0F56F00F1FE2E /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		3A4EAD6B19F9E9E10001950F /* SharedScoreArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedScoreArray.h; sourceTree = "<group>"; };
+		3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedScoreArray.m; sourceTree = "<group>"; };
 		3A553E3819EF5DB7005FE35B /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
 		3A7FBB9319EE50B700CEFC43 /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FBB9619EE50B700CEFC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 				3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */,
 				3AA10CF319F501F5004F3424 /* FileHandler.h */,
 				3AA10CF419F501F5004F3424 /* FileHandler.m */,
+				3A4EAD6B19F9E9E10001950F /* SharedScoreArray.h */,
+				3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */,
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
 				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
@@ -323,6 +328,7 @@
 				3AA10CF519F501F5004F3424 /* FileHandler.m in Sources */,
 				3AA10CF219F4FFAD004F3424 /* HighScoresViewController.m in Sources */,
 				3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */,
+				3A4EAD6D19F9E9E10001950F /* SharedScoreArray.m in Sources */,
 				3ABBA64119F78A1C00833236 /* FallingObject.m in Sources */,
 				3A1748CA19F0F56F00F1FE2E /* GameOverViewController.m in Sources */,
 				3A1748C519F0CFF300F1FE2E /* MainMenuViewController.m in Sources */,

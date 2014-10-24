@@ -7,13 +7,12 @@
 //
 
 #import "HighScoresViewController.h"
-#import "FileHandler.h"
+#import "SharedScoreArray.h"
 
 NSString *const title = @"High Scores";
 
 @interface HighScoresViewController ()
-@property(retain,nonatomic) NSMutableArray *scoreArray;
-@property(retain,nonatomic) FileHandler *fileHandler;
+
 @end
 
 @implementation HighScoresViewController
@@ -22,8 +21,7 @@ NSString *const title = @"High Scores";
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if(self){
-        self.fileHandler = [[[FileHandler alloc]init]autorelease];
-        _scoreArray = [[NSMutableArray alloc]init];
+    
     }
     return self;
 }
@@ -31,7 +29,7 @@ NSString *const title = @"High Scores";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.fileHandler loadJSONFile];
+    //[self.fileHandler loadJSONFile];
     self.title = title;
 }
 
@@ -49,8 +47,8 @@ NSString *const title = @"High Scores";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
- 
-    return [[self.fileHandler scoreArray] count];
+    //NSLog(@"%ld", (unsigned long)[[SharedScoreArray sharedScoreArray].scoreArray count]);
+    return [[SharedScoreArray sharedScoreArray].scoreArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,8 +60,10 @@ NSString *const title = @"High Scores";
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier]autorelease];
     }
     
-    [cell.textLabel setText:[[self.fileHandler nameArray] objectAtIndex:indexPath.row]];
-    [cell.detailTextLabel setText:[[self.fileHandler scoreArray] objectAtIndex:indexPath.row]];
+    [cell.textLabel setText:[[SharedScoreArray sharedScoreArray].nameArray objectAtIndex:indexPath.row]];
+    
+    
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[[SharedScoreArray sharedScoreArray].scoreArray objectAtIndex:indexPath.row]]];
     
     return cell;
     

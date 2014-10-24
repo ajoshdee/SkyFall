@@ -10,6 +10,7 @@
 #import "GameViewController.h"
 #import "HighScoresViewController.h"
 #import "FileHandler.h"
+#import "SharedScoreArray.h"
 
 NSString *const errorTitle = @"Error";
 NSString *const errorMessage = @"No High Score to Show";
@@ -27,7 +28,7 @@ NSString *const errorOption = @"Ok";
     self = [super init];
     if (self) {
         self.fileHandler = [[[FileHandler alloc]init]autorelease];
-        
+        [self.fileHandler loadJSONFile];
     }
     return self;
 }
@@ -35,7 +36,7 @@ NSString *const errorOption = @"Ok";
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    [self.fileHandler loadJSONFile];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +54,8 @@ NSString *const errorOption = @"Ok";
 
 - (IBAction)showHighScore:(id)sender {
     
-    if ([[[self.fileHandler nameArray] firstObject] isEqualToString:@""]) {
+    NSString *firstNameInArray = [[SharedScoreArray sharedScoreArray].nameArray firstObject];
+    if ([firstNameInArray isEqualToString:@""]) {
         [self showAlertView];
     }
     else{

@@ -10,7 +10,9 @@
 #import "PlayerController.h"
 #import "FallingObject.h"
 #import "GameOverViewController.h"
-#import "FileHandler.h"
+
+#import "SharedScoreArray.h"
+
 // Character Properties
 int const playerWidth = 38;
 int const playerHeight = 65;
@@ -28,7 +30,6 @@ double const floorCollisionInterval = 0.8;
 @property (retain, nonatomic) NSTimer *fallingObjectCollisionTimer;
 @property (retain, nonatomic) NSTimer *floorCollisionTimer;
 @property (assign, nonatomic) CGRect playerFrame;
-@property (retain, nonatomic) FileHandler *fileHandler;
 @property (nonatomic, assign) int score;
 @end
 
@@ -37,7 +38,6 @@ double const floorCollisionInterval = 0.8;
 {
     self = [super init];
     if (self) {
-        self.fileHandler = [[[FileHandler alloc]init]autorelease];
         
         self.playerFrame = CGRectMake(((self.view.frame.size.width/2)-(playerWidth/2)), (self.view.frame.size.height*0.70), playerWidth , playerHeight);
         PlayerController *playerView = [[PlayerController alloc] initWithFrame:self.playerFrame];
@@ -64,14 +64,12 @@ double const floorCollisionInterval = 0.8;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.fileHandler loadJSONFile];
-    
-    int highScore = [[[self.fileHandler scoreArray] firstObject] intValue];
+    self.fallObject = [[[FallingObject alloc] init] autorelease];
+    int highScore = [[[SharedScoreArray sharedScoreArray].scoreArray firstObject] intValue];
 
     [self.highScoreLabel setText:[NSString stringWithFormat:@"%i", highScore]];
     
-    self.fallObject = [[[FallingObject alloc] init] autorelease];
+    
 
     self.fallingObjectCollisionTimer = [NSTimer scheduledTimerWithTimeInterval: fallingObjectInterval
                                      target: self
@@ -147,6 +145,7 @@ double const floorCollisionInterval = 0.8;
     [self.fallingObjectCollisionTimer invalidate];
     [self.floorCollisionTimer invalidate];
     [self setScore:0];
+    self.fallObject = nil;
     [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
     self.player.frame = self.playerFrame;    
 

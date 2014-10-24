@@ -7,6 +7,8 @@
 //
 
 #import "FileHandler.h"
+#import "SharedScoreArray.h"
+
 NSString *const scoreKey = @"high scores";
 NSString *const nameKey = @"player names";
 
@@ -15,24 +17,16 @@ NSString *const nameKey = @"player names";
 -(void)loadJSONFile
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
-    
-    self.scoreArray = [dictionary valueForKey:scoreKey];
-    self.nameArray = [dictionary valueForKey:nameKey];
-    if (!self.scoreArray || !self.nameArray) {
-        NSNumber *zero = [NSNumber numberWithInt:0];
-        NSString *name = @"";
-        self.nameArray = [[[NSMutableArray alloc]initWithObjects: name, nil]autorelease];
-        self.scoreArray = [[[NSMutableArray alloc]initWithObjects: zero, nil]autorelease];
-        
-        
+    if(dictionary){
+        [SharedScoreArray sharedScoreArray].scoreArray = [dictionary valueForKey:scoreKey];
+        [SharedScoreArray sharedScoreArray].nameArray = [dictionary valueForKey:nameKey];
     }
-
+    
 }
 
 -(void)writeToJSONFile
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:self.scoreArray,
-                                                                         scoreKey,self.nameArray,nameKey, nil];
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[SharedScoreArray sharedScoreArray].scoreArray,scoreKey,[SharedScoreArray sharedScoreArray].nameArray,nameKey, nil];
     [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
                                                    atomically:YES
                                                      encoding:NSUTF8StringEncoding

@@ -8,6 +8,7 @@
 
 #import "GameOverViewController.h"
 #import "FileHandler.h"
+#import "SharedScoreArray.h"
 
 NSString *const alertTitle = @"New High Score!";
 NSString *const alertMessage = @"Enter your name";
@@ -39,7 +40,7 @@ NSInteger const topTen = 10;
 {
     self = [super init];
     if (self) {
-        self.fileHandler = [[[FileHandler alloc]init]autorelease];
+        self.fileHandler = [[FileHandler alloc]init];
     }
     return self;
 }
@@ -49,7 +50,6 @@ NSInteger const topTen = 10;
 {
     [super viewDidLoad];
 
-    [self.fileHandler loadJSONFile];
     [self checkHighScore];
     
 }
@@ -62,15 +62,15 @@ NSInteger const topTen = 10;
 
 -(void)showAlertView
 {
-    self.highScoreMessage =[[[UIAlertView alloc ] initWithTitle:alertTitle
+    self.highScoreMessage =[[UIAlertView alloc ] initWithTitle:alertTitle
                                                     message:alertMessage
                                                    delegate:self
                                           cancelButtonTitle:nil
-                                          otherButtonTitles: alertOption, nil] autorelease];
+                                          otherButtonTitles: alertOption, nil] ;
     self.highScoreMessage.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     [self.highScoreMessage show];
-
+    [_highScoreMessage release];
 
 }
 
@@ -82,11 +82,11 @@ NSInteger const topTen = 10;
 
 -(void)checkHighScore
 {
-   self.scoreArrayCount = [[self.fileHandler scoreArray] count];
+   self.scoreArrayCount = [[SharedScoreArray sharedScoreArray].scoreArray count];
     
     for (i = 0; i< self.scoreArrayCount; i++) {
 
-        self.highScore = [[self.fileHandler scoreArray] objectAtIndex:i];
+        self.highScore = [[SharedScoreArray sharedScoreArray].scoreArray objectAtIndex:i];
         
         if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= topTen){
            
@@ -106,17 +106,18 @@ NSInteger const topTen = 10;
         [self showAlertView];
         return;
     }
-    [[self.fileHandler nameArray] insertObject:self.playerName atIndex:i];
+    [[SharedScoreArray sharedScoreArray].nameArray insertObject:self.playerName atIndex:i];
     
-    [[self.fileHandler scoreArray] insertObject:_currentScore atIndex:i];
-    NSInteger newScoreArrayCount = [[self.fileHandler scoreArray] count];
+    [[SharedScoreArray sharedScoreArray].scoreArray insertObject:_currentScore atIndex:i];
+    NSInteger newScoreArrayCount = [[SharedScoreArray sharedScoreArray].scoreArray count];
    
     if(newScoreArrayCount > topTen ||[self.highScore intValue] == 0){
-        [[self.fileHandler scoreArray] removeLastObject];
-        [[self.fileHandler nameArray] removeLastObject];
+        [[SharedScoreArray sharedScoreArray].scoreArray removeLastObject];
+        [[SharedScoreArray sharedScoreArray].nameArray removeLastObject];
     }
     
     [self.fileHandler writeToJSONFile];
+    [_playerName release];
     [_highScore release];
 }
 
