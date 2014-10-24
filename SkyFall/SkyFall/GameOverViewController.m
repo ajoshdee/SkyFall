@@ -40,7 +40,7 @@ NSInteger const topTen = 10;
 {
     self = [super init];
     if (self) {
-        self.fileHandler = [[FileHandler alloc]init];
+        self.fileHandler = [[[FileHandler alloc]init]autorelease];
     }
     return self;
 }
@@ -89,7 +89,8 @@ NSInteger const topTen = 10;
         self.highScore = [[SharedScoreArray sharedScoreArray].scoreArray objectAtIndex:i];
         
         if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= topTen){
-           
+            [_currentScore isKindOfClass:[NSNumber class]];
+             
             [self showAlertView];
  
             return;

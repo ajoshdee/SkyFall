@@ -47,7 +47,7 @@ NSString *const title = @"High Scores";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //NSLog(@"%ld", (unsigned long)[[SharedScoreArray sharedScoreArray].scoreArray count]);
+    NSLog(@"%ld", (unsigned long)[[SharedScoreArray sharedScoreArray].scoreArray count]);
     return [[SharedScoreArray sharedScoreArray].scoreArray count];
 }
 
