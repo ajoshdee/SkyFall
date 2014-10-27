@@ -144,6 +144,7 @@ double const floorCollisionInterval = 0.8;
 {
     [self.fallingObjectCollisionTimer invalidate];
     [self.floorCollisionTimer invalidate];
+
     [self setScore:0];
     self.fallObject = nil;
     [self.scoreLabel setText:[NSString stringWithFormat:@"%i", _score]];
@@ -155,6 +156,10 @@ double const floorCollisionInterval = 0.8;
     self.highScoreLabel = nil;
     self.energyLabel = nil;
     self.scoreLabel = nil;
+    
+    [_fallingObjectCollisionTimer release];
+    [_floorCollisionTimer release];
+    
     [super dealloc];
 }
 @end

@@ -37,6 +37,7 @@ NSString *const errorOption = @"Ok";
 }
 
 - (IBAction)playButton:(id)sender {
+    
     GameViewController *gameViewController = [[GameViewController alloc] init];
     [self.navigationController pushViewController:gameViewController animated:NO];
     [gameViewController release];
