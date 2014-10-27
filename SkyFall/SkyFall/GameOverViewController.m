@@ -45,6 +45,11 @@ NSInteger const topTen = 10;
     return self;
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+      i = 0;
+
+}
 
 - (void)viewDidLoad
 {
@@ -122,10 +127,6 @@ NSInteger const topTen = 10;
     [_highScore release];
 }
 
-- (void)dealloc {
-    i = 0;
-    
-    [super dealloc];
-}
+
 
 @end

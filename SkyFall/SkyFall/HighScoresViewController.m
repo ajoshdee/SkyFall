@@ -29,7 +29,6 @@ NSString *const title = @"High Scores";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.fileHandler loadJSONFile];
     self.title = title;
 }
 

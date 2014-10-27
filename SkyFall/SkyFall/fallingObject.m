@@ -48,7 +48,7 @@ int const fallingObjectHeight = 53;
         float speed = [self generateRandomNumberBetweenMin:1.0 Max:2.0];
         [self makeObjectFall:speed];
     }
-    //[_fallingObjectArray release];
+    
 }
 
 - (void)makeObjectFall:(float)speed
