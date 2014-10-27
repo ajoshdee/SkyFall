@@ -10,9 +10,12 @@
 
 @interface SharedScoreArray : NSObject
 
-@property (nonatomic, retain) NSMutableArray *scoreArray;
-@property (nonatomic, retain) NSMutableArray *nameArray;
+@property (nonatomic, retain) NSArray *allScores;
+@property (nonatomic, retain) NSArray *allNames;
 
 +(SharedScoreArray*)sharedScoreArray;
-
+- (void)addscore:(NSNumber *) score atIndex:(int) index;
+- (void)addName:(NSString *) name atIndex:(int) index;
+- (void)removeScore;
+-(void)writeToJSONFile;
 @end

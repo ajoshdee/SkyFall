@@ -7,7 +7,7 @@
 //
 
 #import "GameOverViewController.h"
-#import "FileHandler.h"
+
 #import "SharedScoreArray.h"
 
 NSString *const alertTitle = @"New High Score!";
@@ -20,8 +20,8 @@ NSInteger const topTen = 10;
     int i;
 }
 @property (retain, nonatomic) UIAlertView *highScoreMessage;
-@property (retain, nonatomic) FileHandler *fileHandler;
-@property (retain, nonatomic) NSString *playerName;
+
+@property (copy, nonatomic) NSString *playerName;
 @property (assign, nonatomic) NSInteger scoreArrayCount;
 @property (assign, nonatomic) NSNumber *highScore;
 
@@ -36,14 +36,7 @@ NSInteger const topTen = 10;
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.fileHandler = [[[FileHandler alloc]init]autorelease];
-    }
-    return self;
-}
+
 
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -87,11 +80,11 @@ NSInteger const topTen = 10;
 
 -(void)checkHighScore
 {
-   self.scoreArrayCount = [[SharedScoreArray sharedScoreArray].scoreArray count];
+   self.scoreArrayCount = [[[SharedScoreArray sharedScoreArray] allScores] count];
     
     for (i = 0; i< self.scoreArrayCount; i++) {
 
-        self.highScore = [[SharedScoreArray sharedScoreArray].scoreArray objectAtIndex:i];
+        self.highScore = [[[SharedScoreArray sharedScoreArray]allScores] objectAtIndex:i];
         
         if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= topTen){
             [_currentScore isKindOfClass:[NSNumber class]];
@@ -100,9 +93,7 @@ NSInteger const topTen = 10;
  
             return;
         }
-    
     }
-    
 }
 
 -(void)updateScore
@@ -112,17 +103,17 @@ NSInteger const topTen = 10;
         [self showAlertView];
         return;
     }
-    [[SharedScoreArray sharedScoreArray].nameArray insertObject:self.playerName atIndex:i];
+    [[SharedScoreArray sharedScoreArray]addName:self.playerName atIndex:i];
     
-    [[SharedScoreArray sharedScoreArray].scoreArray insertObject:_currentScore atIndex:i];
-    NSInteger newScoreArrayCount = [[SharedScoreArray sharedScoreArray].scoreArray count];
+    [[SharedScoreArray sharedScoreArray]addscore:_currentScore atIndex:i];
+    NSInteger newScoreArrayCount = [[[SharedScoreArray sharedScoreArray] allScores] count];
    
     if(newScoreArrayCount > topTen ||[self.highScore intValue] == 0){
-        [[SharedScoreArray sharedScoreArray].scoreArray removeLastObject];
-        [[SharedScoreArray sharedScoreArray].nameArray removeLastObject];
+        [[SharedScoreArray sharedScoreArray]removeScore];
+        
     }
     
-    [self.fileHandler writeToJSONFile];
+    [[SharedScoreArray sharedScoreArray] writeToJSONFile];
     [_playerName release];
     [_highScore release];
 }

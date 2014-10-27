@@ -65,7 +65,7 @@ double const floorCollisionInterval = 0.8;
 {
     [super viewWillAppear:animated];
     self.fallObject = [[[FallingObject alloc] init] autorelease];
-    int highScore = [[[SharedScoreArray sharedScoreArray].scoreArray firstObject] intValue];
+    int highScore = [[[[SharedScoreArray sharedScoreArray]allScores] firstObject] intValue];
 
     [self.highScoreLabel setText:[NSString stringWithFormat:@"%i", highScore]];
     

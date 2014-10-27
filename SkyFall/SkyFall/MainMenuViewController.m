@@ -9,7 +9,7 @@
 #import "MainMenuViewController.h"
 #import "GameViewController.h"
 #import "HighScoresViewController.h"
-#import "FileHandler.h"
+
 #import "SharedScoreArray.h"
 
 NSString *const errorTitle = @"Error";
@@ -17,21 +17,12 @@ NSString *const errorMessage = @"No High Score to Show";
 NSString *const errorOption = @"Ok";
 
 @interface MainMenuViewController ()
-@property (retain, nonatomic) FileHandler *fileHandler;
 
 @end
 
 @implementation MainMenuViewController
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.fileHandler = [[[FileHandler alloc]init]autorelease];
-        [self.fileHandler loadJSONFile];
-    }
-    return self;
-}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -49,12 +40,12 @@ NSString *const errorOption = @"Ok";
     GameViewController *gameViewController = [[GameViewController alloc] init];
     [self.navigationController pushViewController:gameViewController animated:NO];
     [gameViewController release];
-    gameViewController = nil;
+    
 }
 
 - (IBAction)showHighScore:(id)sender {
     
-    NSString *firstNameInArray = [NSString stringWithFormat:@"%@",[[SharedScoreArray sharedScoreArray].nameArray firstObject]];
+    NSString *firstNameInArray = [NSString stringWithFormat:@"%@",[[[SharedScoreArray sharedScoreArray]allNames] firstObject]];
     if ([firstNameInArray isEqualToString:@""]) {
         [self showAlertView];
     }
@@ -62,7 +53,7 @@ NSString *const errorOption = @"Ok";
         HighScoresViewController *highScoreVC = [[HighScoresViewController alloc]init];
         [self.navigationController pushViewController:highScoreVC animated:NO];
         [highScoreVC release];
-        highScoreVC = nil;
+        
     }
 }
 

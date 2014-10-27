@@ -30,6 +30,7 @@ NSString *const title = @"High Scores";
 {
     [super viewDidLoad];
     self.title = title;
+    self.tableView.scrollEnabled = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -46,8 +47,8 @@ NSString *const title = @"High Scores";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%ld", (unsigned long)[[SharedScoreArray sharedScoreArray].scoreArray count]);
-    return [[SharedScoreArray sharedScoreArray].scoreArray count];
+    
+    return [[[SharedScoreArray sharedScoreArray] allScores] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,10 +60,10 @@ NSString *const title = @"High Scores";
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier]autorelease];
     }
     
-    [cell.textLabel setText:[[SharedScoreArray sharedScoreArray].nameArray objectAtIndex:indexPath.row]];
+    [cell.textLabel setText:[[[SharedScoreArray sharedScoreArray]allNames] objectAtIndex:indexPath.row]];
     
     
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[[SharedScoreArray sharedScoreArray].scoreArray objectAtIndex:indexPath.row]]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[[[SharedScoreArray sharedScoreArray]allScores] objectAtIndex:indexPath.row]]];
     
     return cell;
     

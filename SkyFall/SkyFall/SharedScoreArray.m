@@ -8,16 +8,23 @@
 
 #import "SharedScoreArray.h"
 
+NSString *const scoreKey = @"high scores";
+NSString *const nameKey = @"player names";
+
+@interface SharedScoreArray ()
+
+@property (nonatomic, retain) NSMutableArray *scoreArray;
+@property (nonatomic, retain) NSMutableArray *nameArray;
+
+@end
+
 @implementation SharedScoreArray
+
 +(SharedScoreArray *)sharedScoreArray {
     static SharedScoreArray *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shared = [[SharedScoreArray alloc] init];
-        //if (!shared.scoreArray || !shared.nameArray) {
-            
-            
-       // }
 
     });
     return shared;
@@ -27,18 +34,22 @@
 {
     self = [super init];
     if (self) {
-        NSNumber *zero = [NSNumber numberWithInt:0];
-        NSString *name = @"";
-        _nameArray = [[NSMutableArray alloc]initWithObjects: name, nil];
-        _scoreArray = [[NSMutableArray alloc]initWithObjects: zero, nil];
+        [self loadJSONFile];
     }
     return self;
 }
 
 - (NSArray *)allScores
 {
-    return [self.scoreArray copy];
+    
+    return [[self.scoreArray copy]autorelease];
 }
+
+- (NSArray *)allNames
+{
+    return [[self.nameArray copy]autorelease];
+}
+
 
 - (void)addscore:(NSNumber *) score atIndex:(int) index
 {
@@ -54,10 +65,49 @@
     
 }
 
-- (void)removeScoreAtIndex:(int)index
+- (void)removeScore
 {
     [self.scoreArray removeLastObject];
     [self.nameArray removeLastObject];
 }
+
+-(void)loadJSONFile
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
+    
+    if(dictionary){
+        _scoreArray = [dictionary valueForKey:scoreKey];
+        _nameArray = [dictionary valueForKey:nameKey];
+    }
+    
+    if (_scoreArray == nil || _nameArray == nil) {
+        NSNumber *zero = [NSNumber numberWithInt:0];
+        NSString *name = @"";
+        _nameArray = [[NSMutableArray alloc]initWithObjects: name, nil];
+        _scoreArray = [[NSMutableArray alloc]initWithObjects: zero, nil];
+    }
+}
+
+-(void)writeToJSONFile
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:_scoreArray,scoreKey,_nameArray,nameKey, nil];
+    [[NSString stringWithFormat:@"%@",dictionary] writeToFile:[self JSONFilePath]
+                                                   atomically:YES
+                                                     encoding:NSUTF8StringEncoding
+                                                        error:nil];
+    
+}
+
+-(NSString *)JSONFilePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                                       NSUserDomainMask,
+                                                                       YES);
+    NSString *filePath = [documentDirectories firstObject];
+    
+    filePath = [filePath stringByAppendingPathComponent: @"high_scores.json"];
+    return filePath;
+}
+
 
 @end
