@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A11C44B19F88B20001A0A56 /* SkyFallLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A11C44A19F88B20001A0A56 /* SkyFallLogo.png */; };
+		3A1748C519F0CFF300F1FE2E /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1748C319F0CFF300F1FE2E /* MainMenuViewController.m */; };
+		3A1748C619F0CFF300F1FE2E /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1748C419F0CFF300F1FE2E /* MainMenuViewController.xib */; };
+		3A1748CA19F0F56F00F1FE2E /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1748C819F0F56F00F1FE2E /* GameOverViewController.m */; };
+		3A1748CB19F0F56F00F1FE2E /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1748C919F0F56F00F1FE2E /* GameOverViewController.xib */; };
+		3A4EAD6D19F9E9E10001950F /* SharedScoreArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */; };
+		3A553E3919EF5DB7005FE35B /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A553E3819EF5DB7005FE35B /* meteor.png */; };
 		3A7FBB9719EE50B700CEFC43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9619EE50B700CEFC43 /* Foundation.framework */; };
 		3A7FBB9919EE50B700CEFC43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */; };
 		3A7FBB9B19EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
@@ -19,6 +26,13 @@
 		3A7FBBB219EE50B700CEFC43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7FBB9A19EE50B700CEFC43 /* UIKit.framework */; };
 		3A7FBBBA19EE50B700CEFC43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */; };
 		3A7FBBBC19EE50B700CEFC43 /* SkyFallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */; };
+		3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */; };
+		3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */; };
+		3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FBBCC19EE5A0000CEFC43 /* duck.png */; };
+		3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */; };
+		3AA10CF219F4FFAD004F3424 /* HighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */; };
+		3ABBA64119F78A1C00833236 /* FallingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABBA64019F78A1C00833236 /* FallingObject.m */; };
+		3ABD63F319F5DEFD00236B63 /* high_scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 3ABD63F219F5DEFD00236B63 /* high_scores.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A11C44A19F88B20001A0A56 /* SkyFallLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SkyFallLogo.png; sourceTree = "<group>"; };
+		3A1748C219F0CFF300F1FE2E /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		3A1748C319F0CFF300F1FE2E /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		3A1748C419F0CFF300F1FE2E /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		3A1748C719F0F56F00F1FE2E /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		3A1748C819F0F56F00F1FE2E /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
+		3A1748C919F0F56F00F1FE2E /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		3A4EAD6B19F9E9E10001950F /* SharedScoreArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedScoreArray.h; sourceTree = "<group>"; };
+		3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedScoreArray.m; sourceTree = "<group>"; };
+		3A553E3819EF5DB7005FE35B /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
 		3A7FBB9319EE50B700CEFC43 /* SkyFall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyFall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FBB9619EE50B700CEFC43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A7FBB9819EE50B700CEFC43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +72,17 @@
 		3A7FBBB719EE50B700CEFC43 /* SkyFallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyFallTests-Info.plist"; sourceTree = "<group>"; };
 		3A7FBBB919EE50B700CEFC43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A7FBBBB19EE50B700CEFC43 /* SkyFallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyFallTests.m; sourceTree = "<group>"; };
+		3A7FBBC519EE51CB00CEFC43 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		3A7FBBCC19EE5A0000CEFC43 /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck.png; sourceTree = "<group>"; };
+		3A7FBBD119EE6FB800CEFC43 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
+		3AA10CF019F4FFAD004F3424 /* HighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresViewController.h; sourceTree = "<group>"; };
+		3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresViewController.m; sourceTree = "<group>"; };
+		3ABBA63F19F78A1C00833236 /* FallingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingObject.h; sourceTree = "<group>"; };
+		3ABBA64019F78A1C00833236 /* FallingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallingObject.m; sourceTree = "<group>"; };
+		3ABD63F219F5DEFD00236B63 /* high_scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = high_scores.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +144,25 @@
 			children = (
 				3A7FBBA519EE50B700CEFC43 /* AppDelegate.h */,
 				3A7FBBA619EE50B700CEFC43 /* AppDelegate.m */,
+				3A7FBBC519EE51CB00CEFC43 /* GameViewController.h */,
+				3A7FBBC619EE51CB00CEFC43 /* GameViewController.m */,
+				3A7FBBC719EE51CB00CEFC43 /* GameViewController.xib */,
+				3A7FBBD119EE6FB800CEFC43 /* PlayerController.h */,
+				3A7FBBD219EE6FB800CEFC43 /* PlayerController.m */,
+				3ABBA63F19F78A1C00833236 /* FallingObject.h */,
+				3ABBA64019F78A1C00833236 /* FallingObject.m */,
+				3A1748C219F0CFF300F1FE2E /* MainMenuViewController.h */,
+				3A1748C319F0CFF300F1FE2E /* MainMenuViewController.m */,
+				3A1748C419F0CFF300F1FE2E /* MainMenuViewController.xib */,
+				3A1748C719F0F56F00F1FE2E /* GameOverViewController.h */,
+				3A1748C819F0F56F00F1FE2E /* GameOverViewController.m */,
+				3A1748C919F0F56F00F1FE2E /* GameOverViewController.xib */,
+				3AA10CF019F4FFAD004F3424 /* HighScoresViewController.h */,
+				3AA10CF119F4FFAD004F3424 /* HighScoresViewController.m */,
+				3A4EAD6B19F9E9E10001950F /* SharedScoreArray.h */,
+				3A4EAD6C19F9E9E10001950F /* SharedScoreArray.m */,
 				3A7FBBA819EE50B700CEFC43 /* Images.xcassets */,
+				3A7FBBCA19EE59DA00CEFC43 /* Resources */,
 				3A7FBB9D19EE50B700CEFC43 /* Supporting Files */,
 			);
 			path = SkyFall;
@@ -142,6 +195,25 @@
 				3A7FBBB819EE50B700CEFC43 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A7FBBCA19EE59DA00CEFC43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ABD63F219F5DEFD00236B63 /* high_scores.json */,
+				3A7FBBCB19EE59E700CEFC43 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3A7FBBCB19EE59E700CEFC43 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3A11C44A19F88B20001A0A56 /* SkyFallLogo.png */,
+				3A7FBBCC19EE5A0000CEFC43 /* duck.png */,
+				3A553E3819EF5DB7005FE35B /* meteor.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +291,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A553E3919EF5DB7005FE35B /* meteor.png in Resources */,
 				3A7FBBA119EE50B700CEFC43 /* InfoPlist.strings in Resources */,
 				3A7FBBA919EE50B700CEFC43 /* Images.xcassets in Resources */,
+				3A7FBBCD19EE5A0000CEFC43 /* duck.png in Resources */,
+				3A11C44B19F88B20001A0A56 /* SkyFallLogo.png in Resources */,
+				3A1748C619F0CFF300F1FE2E /* MainMenuViewController.xib in Resources */,
+				3A7FBBC919EE51CB00CEFC43 /* GameViewController.xib in Resources */,
+				3ABD63F319F5DEFD00236B63 /* high_scores.json in Resources */,
+				3A1748CB19F0F56F00F1FE2E /* GameOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7FBBA719EE50B700CEFC43 /* AppDelegate.m in Sources */,
+				3A7FBBC819EE51CB00CEFC43 /* GameViewController.m in Sources */,
+				3AA10CF219F4FFAD004F3424 /* HighScoresViewController.m in Sources */,
+				3A7FBBD319EE6FB800CEFC43 /* PlayerController.m in Sources */,
+				3A4EAD6D19F9E9E10001950F /* SharedScoreArray.m in Sources */,
+				3ABBA64119F78A1C00833236 /* FallingObject.m in Sources */,
+				3A1748CA19F0F56F00F1FE2E /* GameOverViewController.m in Sources */,
+				3A1748C519F0CFF300F1FE2E /* MainMenuViewController.m in Sources */,
 				3A7FBBA319EE50B700CEFC43 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +375,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -298,6 +384,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -316,6 +403,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -327,7 +415,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -336,6 +424,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -347,6 +436,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -437,6 +527,7 @@
 				3A7FBBC119EE50B700CEFC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A7FBBC219EE50B700CEFC43 /* Build configuration list for PBXNativeTarget "SkyFallTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +536,7 @@
 				3A7FBBC419EE50B700CEFC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
