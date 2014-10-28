@@ -35,8 +35,8 @@ NSString *const nameKey = @"player names";
 {
     self = [super init];
     if (self) {
-        
-        
+        [self loadJSONFile];
+    
     }
     return self;
 }
@@ -78,8 +78,8 @@ NSString *const nameKey = @"player names";
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[self JSONFilePath]];
     
     if(dictionary){
-        _scoreArray = [dictionary valueForKey:scoreKey];
-        _nameArray = [dictionary valueForKey:nameKey];
+        _scoreArray = [[dictionary valueForKey:scoreKey]copy];
+        _nameArray = [[dictionary valueForKey:nameKey]copy];
     }
     
     if (_scoreArray == nil || _nameArray == nil) {
@@ -111,6 +111,7 @@ NSString *const nameKey = @"player names";
     filePath = [filePath stringByAppendingPathComponent: @"high_scores.json"];
     return filePath;
 }
+
 
 
 @end

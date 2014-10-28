@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MainMenuViewController.h"
 #import "GameOverViewController.h"
-#import "SharedScoreArray.h"
+
 
 @implementation AppDelegate
 
@@ -26,7 +26,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [[SharedScoreArray sharedScoreArray] loadJSONFile];
+    
     return YES;
 }
 

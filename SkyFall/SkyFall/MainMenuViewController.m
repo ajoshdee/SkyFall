@@ -26,6 +26,7 @@ NSString *const errorOption = @"Ok";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.navigationController setNavigationBarHidden:YES];
     
 }

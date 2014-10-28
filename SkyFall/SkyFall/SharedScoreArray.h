@@ -10,8 +10,8 @@
 
 @interface SharedScoreArray : NSObject
 
-@property (nonatomic, retain) NSArray *allScores;
-@property (nonatomic, retain) NSArray *allNames;
+@property (nonatomic, readonly) NSArray *allScores;
+@property (nonatomic, readonly) NSArray *allNames;
 
 +(SharedScoreArray*)sharedScoreArray;
 - (void)addscore:(NSNumber *) score atIndex:(int) index;
