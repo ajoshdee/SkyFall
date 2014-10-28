@@ -108,6 +108,7 @@ double const floorCollisionInterval = 0.8;
         if ([self isColliding:[[theView.layer presentationLayer] frame] withSecondFrame:self.player.frame]) {
           
             [self gameOver];
+            [self resetGame];
         }
    
         if (![self isColliding:[[theView.layer presentationLayer] frame] withSecondFrame:self.view.frame]){
@@ -135,7 +136,7 @@ double const floorCollisionInterval = 0.8;
     [gameOverViewController release];
     gameOverViewController = nil;
     
-    [self resetGame];
+    
     
 
 }

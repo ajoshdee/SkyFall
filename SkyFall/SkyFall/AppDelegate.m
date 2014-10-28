@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainMenuViewController.h"
 #import "GameOverViewController.h"
+#import "SharedScoreArray.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,6 +26,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [[SharedScoreArray sharedScoreArray] loadJSONFile];
     return YES;
 }
 

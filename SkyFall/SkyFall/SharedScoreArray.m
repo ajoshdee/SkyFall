@@ -26,6 +26,7 @@ NSString *const nameKey = @"player names";
     dispatch_once(&onceToken, ^{
         shared = [[SharedScoreArray alloc] init];
 
+
     });
     return shared;
 }
@@ -34,7 +35,8 @@ NSString *const nameKey = @"player names";
 {
     self = [super init];
     if (self) {
-        [self loadJSONFile];
+        
+        
     }
     return self;
 }
@@ -42,12 +44,12 @@ NSString *const nameKey = @"player names";
 - (NSArray *)allScores
 {
     
-    return [[self.scoreArray copy]autorelease];
+    return [[_scoreArray copy]autorelease];
 }
 
 - (NSArray *)allNames
 {
-    return [[self.nameArray copy]autorelease];
+    return [[_nameArray copy]autorelease];
 }
 
 
@@ -86,6 +88,7 @@ NSString *const nameKey = @"player names";
         _nameArray = [[NSMutableArray alloc]initWithObjects: name, nil];
         _scoreArray = [[NSMutableArray alloc]initWithObjects: zero, nil];
     }
+    
 }
 
 -(void)writeToJSONFile

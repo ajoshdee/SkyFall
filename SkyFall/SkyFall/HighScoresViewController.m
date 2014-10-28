@@ -21,7 +21,7 @@ NSString *const title = @"High Scores";
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if(self){
-    
+       
     }
     return self;
 }
@@ -60,10 +60,13 @@ NSString *const title = @"High Scores";
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier]autorelease];
     }
     
-    [cell.textLabel setText:[[[SharedScoreArray sharedScoreArray]allNames] objectAtIndex:indexPath.row]];
+    NSArray *scores = [[SharedScoreArray sharedScoreArray]allScores];
+    NSArray *names = [[SharedScoreArray sharedScoreArray]allNames];
+    
+    [cell.textLabel setText:[names objectAtIndex:indexPath.row]];
     
     
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[[[SharedScoreArray sharedScoreArray]allScores] objectAtIndex:indexPath.row]]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[scores objectAtIndex:indexPath.row]]];
     
     return cell;
     

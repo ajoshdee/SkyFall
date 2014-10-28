@@ -87,8 +87,7 @@ NSInteger const topTen = 10;
         self.highScore = [[[SharedScoreArray sharedScoreArray]allScores] objectAtIndex:i];
         
         if([_currentScore intValue] >= [self.highScore intValue] && self.scoreArrayCount <= topTen){
-            [_currentScore isKindOfClass:[NSNumber class]];
-             
+                         
             [self showAlertView];
  
             return;

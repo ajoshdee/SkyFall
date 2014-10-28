@@ -17,5 +17,6 @@
 - (void)addscore:(NSNumber *) score atIndex:(int) index;
 - (void)addName:(NSString *) name atIndex:(int) index;
 - (void)removeScore;
+-(void)loadJSONFile;
 -(void)writeToJSONFile;
 @end

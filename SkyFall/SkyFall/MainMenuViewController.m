@@ -45,8 +45,8 @@ NSString *const errorOption = @"Ok";
 }
 
 - (IBAction)showHighScore:(id)sender {
-    
-    NSString *firstNameInArray = [NSString stringWithFormat:@"%@",[[[SharedScoreArray sharedScoreArray]allNames] firstObject]];
+    NSArray *names = [[SharedScoreArray sharedScoreArray]allNames];
+    NSString *firstNameInArray = [NSString stringWithFormat:@"%@",[names firstObject]];
     if ([firstNameInArray isEqualToString:@""]) {
         [self showAlertView];
     }
